@@ -1,0 +1,66 @@
+digraph SwitchIngress {
+subgraph cluster {
+graph [
+label="", labeljust=r, style=bold];
+0[label=__START__, margin="", shape=rectangle, style=solid];
+1[label=__EXIT__, margin="", shape=rectangle, style=solid];
+2[label="ig_intr_md.ingress_port == 142;", margin="", shape=rectangle, style=solid];
+3[label=tbl_lemon_X284, margin="", shape=ellipse, style=solid];
+4[label="ig_intr_md.ingress_port == 141;", margin="", shape=rectangle, style=solid];
+5[label=tbl_lemon_X288, margin="", shape=ellipse, style=solid];
+6[label=tbl_compute_hash1, margin="", shape=ellipse, style=solid];
+7[label=tbl_compute_hash2, margin="", shape=ellipse, style=solid];
+8[label=tbl_compute_hash3, margin="", shape=ellipse, style=solid];
+9[label=tbl_lemon_X299, margin="", shape=ellipse, style=solid];
+10[label=tbl_lemon_X303, margin="", shape=ellipse, style=solid];
+11[label=tbl_lemon_X306, margin="", shape=ellipse, style=solid];
+12[label=tbl_lemon_X309, margin="", shape=ellipse, style=solid];
+13[label=tbl_lemon_X312, margin="", shape=ellipse, style=solid];
+14[label=tbl_lemon_X315, margin="", shape=ellipse, style=solid];
+15[label="SwitchIngress.lemon_match", margin="", shape=ellipse, style=solid];
+16[label="ig_md.lemon.tag == 1;", margin="", shape=rectangle, style=solid];
+17[label=tbl_lemon_X321, margin="", shape=ellipse, style=solid];
+18[label="ig_md.lemon.tag == 2;", margin="", shape=rectangle, style=solid];
+19[label=tbl_lemon_X324, margin="", shape=ellipse, style=solid];
+20[label="ig_md.lemon.tag == 3;", margin="", shape=rectangle, style=solid];
+21[label=tbl_lemon_X327, margin="", shape=ellipse, style=solid];
+22[label="ig_md.lemon.tag == 4;", margin="", shape=rectangle, style=solid];
+23[label=tbl_lemon_X330, margin="", shape=ellipse, style=solid];
+24[label="ig_md.lemon.tag == 5;", margin="", shape=rectangle, style=solid];
+25[label=tbl_lemon_X333, margin="", shape=ellipse, style=solid];
+26[label=tbl_lemon_X334, margin="", shape=ellipse, style=solid];
+0 -> 2[label=""];
+2 -> 3[label=TRUE];
+2 -> 4[label=FALSE];
+3 -> 4[label=""];
+4 -> 5[label=TRUE];
+4 -> 6[label=FALSE];
+5 -> 6[label=""];
+6 -> 7[label=""];
+7 -> 8[label=""];
+8 -> 9[label=""];
+9 -> 10[label=""];
+10 -> 11[label=""];
+11 -> 12[label=""];
+12 -> 13[label=""];
+13 -> 14[label=""];
+14 -> 15[label=""];
+15 -> 16[label=""];
+16 -> 17[label=TRUE];
+16 -> 18[label=FALSE];
+17 -> 18[label=""];
+18 -> 19[label=TRUE];
+18 -> 20[label=FALSE];
+19 -> 20[label=""];
+20 -> 21[label=TRUE];
+20 -> 22[label=FALSE];
+21 -> 22[label=""];
+22 -> 23[label=TRUE];
+22 -> 24[label=FALSE];
+23 -> 24[label=""];
+24 -> 25[label=TRUE];
+24 -> 1[label=FALSE];
+25 -> 26[label=""];
+26 -> 1[label=""];
+}
+}

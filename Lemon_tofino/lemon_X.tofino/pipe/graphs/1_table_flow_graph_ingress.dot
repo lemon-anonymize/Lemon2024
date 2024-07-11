@@ -1,0 +1,138 @@
+digraph ingress {
+cond_8 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_intr_md.ingress_port == 142\l\l
+ "];
+tbl_lemon_X284 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X284\l\l
+W:\l
+ ig_intr_md_for_tm.ucast_egress_port\l
+ ig_intr_md_for_tm.bypass_egress\l
+ "];
+cond_9 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_intr_md.ingress_port == 141\l\l
+ "];
+tbl_lemon_X288 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X288\l\l
+W:\l
+ ig_intr_md_for_tm.ucast_egress_port\l
+ ig_intr_md_for_tm.bypass_egress\l
+ "];
+tbl_compute_hash1 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_compute_hash1\l\l
+W:\l
+ ig_md.lemon.dhash\l
+ "];
+tbl_compute_hash2 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_compute_hash2\l\l
+W:\l
+ ig_md.lemon.bhash\l
+ "];
+tbl_compute_hash3 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_compute_hash3\l\l
+W:\l
+ ig_md.lemon.shash\l
+ "];
+tbl_lemon_X299 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X299\l\l
+R:\l
+ ig_md.lemon.shash\l
+\lW:\l
+ ig_md.lemon.c_slot\l
+ ig_md.lemon.heavy_slot\l
+ ig_md.lemon.l1_slot\l
+ "];
+tbl_lemon_X303 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X303\l\l
+R:\l
+ ig_md.lemon.bhash\l
+ ig_md.lemon.shash\l
+\lW:\l
+ ig_md.lemon.l1_slot\l
+ ig_md.lemon.l2_slot\l
+ "];
+tbl_lemon_X306 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X306\l\l
+R:\l
+ ig_md.lemon.bhash\l
+ ig_md.lemon.shash\l
+\lW:\l
+ ig_md.lemon.l2_slot\l
+ ig_md.lemon.l3_slot\l
+ "];
+tbl_lemon_X309 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X309\l\l
+R:\l
+ ig_md.lemon.bhash\l
+ ig_md.lemon.shash\l
+\lW:\l
+ ig_md.lemon.l3_slot\l
+ ig_md.lemon.l4_slot\l
+ "];
+tbl_lemon_X312 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X312\l\l
+R:\l
+ ig_md.lemon.bhash\l
+ ig_md.lemon.shash\l
+\lW:\l
+ ig_md.lemon.l4_slot\l
+ ig_md.lemon.l5_slot\l
+ "];
+tbl_lemon_X315 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X315\l\l
+R:\l
+ ig_md.lemon.bhash\l
+\lW:\l
+ ig_md.lemon.l5_slot\l
+ "];
+lemon_match_0 [ shape=record, style="filled", fillcolor=cornsilk, label="lemon_match_0\l\l
+M:\l
+ ig_md.lemon.dhash\l
+\lW:\l
+ ig_md.lemon.tag\l
+ "];
+cond_10 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_md.lemon.tag == 1\l\l
+ "];
+tbl_lemon_X321 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X321\l\l
+ "];
+cond_11 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_md.lemon.tag == 2\l\l
+ "];
+tbl_lemon_X324 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X324\l\l
+ "];
+cond_12 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_md.lemon.tag == 3\l\l
+ "];
+tbl_lemon_X327 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X327\l\l
+ "];
+cond_13 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_md.lemon.tag == 4\l\l
+ "];
+tbl_lemon_X330 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X330\l\l
+ "];
+cond_14 [ shape=record, style="filled", fillcolor=cornsilk, label="ig_md.lemon.tag == 5\l\l
+ "];
+tbl_lemon_X333 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X333\l\l
+ "];
+tbl_lemon_X334 [ shape=record, style="filled", fillcolor=cornsilk, label="tbl_lemon_X334\l\l
+R:\l
+ hdr.ipv4.src_addr\l
+\l "];
+    PARSER -> cond_8
+    cond_8 -> tbl_lemon_X284
+    PARSER -> cond_8
+    cond_8 -> cond_9
+    tbl_lemon_X284 -> cond_9
+    cond_9 -> tbl_lemon_X288
+    cond_9 -> tbl_compute_hash1
+    tbl_lemon_X288 -> tbl_compute_hash1
+    tbl_compute_hash1 -> tbl_compute_hash2
+    tbl_compute_hash2 -> tbl_compute_hash3
+    tbl_compute_hash3 -> tbl_lemon_X299
+    tbl_lemon_X299 -> tbl_lemon_X303
+    tbl_lemon_X303 -> tbl_lemon_X306
+    tbl_lemon_X306 -> tbl_lemon_X309
+    tbl_lemon_X309 -> tbl_lemon_X312
+    tbl_lemon_X312 -> tbl_lemon_X315
+    tbl_lemon_X315 -> lemon_match_0
+    lemon_match_0 -> cond_10
+    cond_10 -> tbl_lemon_X321
+    cond_10 -> cond_11
+    tbl_lemon_X321 -> cond_11
+    cond_11 -> tbl_lemon_X324
+    cond_11 -> cond_12
+    tbl_lemon_X324 -> cond_12
+    cond_12 -> tbl_lemon_X327
+    cond_12 -> cond_13
+    tbl_lemon_X327 -> cond_13
+    cond_13 -> tbl_lemon_X330
+    cond_13 -> cond_14
+    tbl_lemon_X330 -> cond_14
+    cond_14 -> tbl_lemon_X333
+    cond_14 -> DEPARSER
+    tbl_lemon_X333 -> tbl_lemon_X334
+    tbl_lemon_X334 -> DEPARSER
+}

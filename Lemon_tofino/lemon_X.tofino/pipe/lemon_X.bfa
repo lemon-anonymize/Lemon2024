@@ -1,0 +1,1358 @@
+version:
+  version: 1.0.1
+  run_id: "d02317c81a093854"
+  target: Tofino
+phv ingress:
+  ig_intr_md.ingress_port: {  stage 0..2: H2(0..8) } 
+  hdr.ethernet.dst_addr.0-31: TW4
+  hdr.ethernet.dst_addr.32-47: TH8
+  hdr.ethernet.src_addr.0-15: TH5
+  hdr.ethernet.src_addr.16-23: TB0
+  hdr.ethernet.src_addr.24-31: TB1
+  hdr.ethernet.src_addr.32-47: TH7
+  hdr.ethernet.ether_type: TH6
+  hdr.ipv4.version: TW0(28..31)
+  hdr.ipv4.ihl: TW0(24..27)
+  hdr.ipv4.diffserv: TW0(16..23)
+  hdr.ipv4.total_len: TW0(0..15)
+  hdr.ipv4.identification: TH1
+  hdr.ipv4.flags: TH0(13..15)
+  hdr.ipv4.frag_offset: TH0(0..12)
+  hdr.ipv4.ttl: TW3(24..31)
+  hdr.ipv4.protocol: TW3(16..23)
+  hdr.ipv4.hdr_checksum: TW3(0..15)
+  hdr.ipv4.src_addr: W1
+  hdr.ipv4.dst_addr: W0
+  hdr.tcp.src_port: TH4
+  hdr.tcp.dst_port: TH3
+  hdr.tcp.seq_no: W2
+  hdr.tcp.ack_no: TW5
+  hdr.tcp.data_offset: TW1(28..31)
+  hdr.tcp.res: TW1(24..27)
+  hdr.tcp.flags: TW1(16..23)
+  hdr.tcp.window: TW1(0..15)
+  hdr.tcp.checksum: H1
+  hdr.tcp.urgent_ptr: TH2
+  hdr.udp.src_port: TW1(16..31)
+  hdr.udp.dst_port: TW1(0..15)
+  hdr.udp.hdr_length: TH2
+  hdr.udp.checksum: H1
+  hdr.udp.payload: W2
+  hdr.icmp.type_: TW1(24..31)
+  hdr.icmp.code: TW1(16..23)
+  hdr.icmp.hdr_checksum: TW1(0..15)
+  hdr.arp.hw_type: TW1(16..31)
+  hdr.arp.proto_type: TW1(0..15)
+  hdr.arp.hw_addr_len: TW0(24..31)
+  hdr.arp.proto_addr_len: TW0(16..23)
+  hdr.arp.opcode: TW0(0..15)
+  hdr.vlan_tag.pcp: TW2(29..31)
+  hdr.vlan_tag.cfi: TW2(28)
+  hdr.vlan_tag.vid: TW2(16..27)
+  hdr.vlan_tag.ether_type: TW2(0..15)
+  ig_intr_md_for_tm.ucast_egress_port: {  stage 1..12: H0(0..8) } 
+  ig_intr_md_for_tm.bypass_egress: {  stage 1..12: B0(0) } 
+  ig_md.lemon.dhash: {  stage 1: H3 } 
+  ig_md.lemon.shash.0-15: {  stage 1..5: W3(0..15) } 
+  ig_md.lemon.shash.16-23: {  stage 1..5: B2 } 
+  ig_md.lemon.shash.24-31: {  stage 1..5: B3 } 
+  ig_md.lemon.bhash: {  stage 1..5: W10(0..15) } 
+  ig_md.lemon.c_slot.0-12: {  stage 2: W3(16..28) } 
+  ig_md.lemon.c_slot.13-15: {  stage 2: W9(2..4) } 
+  ig_md.lemon.c_slot.16-16: {  stage 2: B0(1) } 
+  ig_md.lemon.c_slot.17-31: {  stage 2: W8(11..25) } 
+  ig_md.lemon.l1_slot.0-2: {  stage 2..7: W8(4..6) } 
+  ig_md.lemon.l1_slot.3-12: {  stage 2..7: W5(0..9) } 
+  ig_md.lemon.l1_slot.13-13: {  stage 2..7: W7(0) } 
+  ig_md.lemon.l1_slot.14-15: {  stage 2..7: W9(0..1) } 
+  ig_md.lemon.l1_slot.16-18: {  stage 2..7: W3(29..31) } 
+  ig_md.lemon.l1_slot.19-19: {  stage 2..7: B1(7) } 
+  ig_md.lemon.l1_slot.20-21: {  stage 2..7: B0(2..3) } 
+  ig_md.lemon.l1_slot.22-29: {  stage 2..7: B5 } 
+  ig_md.lemon.l1_slot.30-31: {  stage 2..7: H2(9..10) } 
+  ig_md.lemon.l2_slot.0-2: {  stage 5..6: W6(3..5) } 
+  ig_md.lemon.l2_slot.3-4: {  stage 5..6: W9(8..9) } 
+  ig_md.lemon.l2_slot.5-14: {  stage 5..6: W4(10..19) } 
+  ig_md.lemon.l2_slot.15-15: {  stage 5..6: W6(1) } 
+  ig_md.lemon.l2_slot.16-20: {  stage 5..6: W7(2..6) } 
+  ig_md.lemon.l2_slot.21-28: {  stage 5..6: B4 } 
+  ig_md.lemon.l2_slot.29-31: {  stage 5..6: B0(4..6) } 
+  ig_md.lemon.l3_slot.0-2: {  stage 4..5: W9(5..7) } 
+  ig_md.lemon.l3_slot.3-4: {  stage 4..5: W8(7..8) } 
+  ig_md.lemon.l3_slot.5-14: {  stage 4..5: W5(10..19) } 
+  ig_md.lemon.l3_slot.15-15: {  stage 4..5: W7(1) } 
+  ig_md.lemon.l3_slot.16-17: {  stage 4..5: W8(2..3) } 
+  ig_md.lemon.l3_slot.18-31: {  stage 4..5: W9(14..27) } 
+  ig_md.lemon.l4_slot.0-4: {  stage 3..4: W6(6..10) } 
+  ig_md.lemon.l4_slot.5-14: {  stage 3..4: W4(20..29) } 
+  ig_md.lemon.l4_slot.15-15: {  stage 3..4: W6(2) } 
+  ig_md.lemon.l4_slot.16-31: {  stage 3..4: W6(11..26) } 
+  ig_md.lemon.l5_slot.0-2: {  stage 3: W7(7..9) } 
+  ig_md.lemon.l5_slot.3-4: {  stage 3: W8(9..10) } 
+  ig_md.lemon.l5_slot.5-8: {  stage 3: W9(10..13) } 
+  ig_md.lemon.l5_slot.9-18: {  stage 3: W5(20..29) } 
+  ig_md.lemon.l5_slot.19-31: {  stage 3: W10(16..28) } 
+  ig_md.lemon.heavy_slot.0-9: {  stage 2: W4(0..9) } 
+  ig_md.lemon.heavy_slot.10-10: {  stage 2: W6(0) } 
+  ig_md.lemon.heavy_slot.11-12: {  stage 2: W8(0..1) } 
+  ig_md.lemon.heavy_slot.13-31: {  stage 2: W7(10..28) } 
+  ig_md.lemon.tag: {  stage 2..7: B6 } 
+  hdr.ethernet.$valid: B1(0)
+  hdr.ipv4.$valid: B1(1)
+  hdr.tcp.$valid: B1(2)
+  hdr.udp.$valid: B1(3)
+  hdr.icmp.$valid: B1(4)
+  hdr.arp.$valid: B1(5)
+  hdr.vlan_tag.$valid: B1(6)
+  context_json:
+    B0:
+    - { name : ig_intr_md_for_tm.bypass_egress, live_start : 1, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.c_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    B1:
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    - { name : hdr.ethernet.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : hdr.ipv4.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : hdr.tcp.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : hdr.udp.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : hdr.icmp.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : hdr.arp.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    - { name : hdr.vlan_tag.$valid, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    B2:
+    - { name : ig_md.lemon.shash, live_start : 1, live_end : 5, mutually_exclusive_with: [  ] }
+    B3:
+    - { name : ig_md.lemon.shash, live_start : 1, live_end : 5, mutually_exclusive_with: [  ] }
+    B4:
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    B5:
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    B6:
+    - { name : ig_md.lemon.tag, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    H0:
+    - { name : ig_intr_md_for_tm.ucast_egress_port, live_start : 1, live_end : deparser, mutually_exclusive_with: [  ] }
+    H1:
+    - { name : hdr.tcp.checksum, live_start : parser, live_end : deparser, mutually_exclusive_with: [ hdr.udp.checksum ] }
+    - { name : hdr.udp.checksum, live_start : parser, live_end : deparser, mutually_exclusive_with: [ hdr.tcp.checksum ] }
+    H2:
+    - { name : ig_intr_md.ingress_port, live_start : parser, live_end : 2, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    H3:
+    - { name : ig_md.lemon.dhash, live_start : 1, live_end : 1, mutually_exclusive_with: [  ] }
+    W0:
+    - { name : hdr.ipv4.dst_addr, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    W1:
+    - { name : hdr.ipv4.src_addr, live_start : parser, live_end : deparser, mutually_exclusive_with: [  ] }
+    W2:
+    - { name : hdr.tcp.seq_no, live_start : parser, live_end : deparser, mutually_exclusive_with: [ hdr.udp.payload ] }
+    - { name : hdr.udp.payload, live_start : parser, live_end : deparser, mutually_exclusive_with: [ hdr.tcp.seq_no ] }
+    W3:
+    - { name : ig_md.lemon.shash, live_start : 1, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.c_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    W4:
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l4_slot, live_start : 3, live_end : 4, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.heavy_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    W5:
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l3_slot, live_start : 4, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l5_slot, live_start : 3, live_end : 3, mutually_exclusive_with: [  ] }
+    W6:
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l4_slot, live_start : 3, live_end : 4, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l4_slot, live_start : 3, live_end : 4, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l4_slot, live_start : 3, live_end : 4, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.heavy_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    W7:
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l3_slot, live_start : 4, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l5_slot, live_start : 3, live_end : 3, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.heavy_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    W8:
+    - { name : ig_md.lemon.c_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l3_slot, live_start : 4, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l3_slot, live_start : 4, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l5_slot, live_start : 3, live_end : 3, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.heavy_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    W9:
+    - { name : ig_md.lemon.c_slot, live_start : 2, live_end : 2, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l1_slot, live_start : 2, live_end : 7, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l2_slot, live_start : 5, live_end : 6, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l3_slot, live_start : 4, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l3_slot, live_start : 4, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l5_slot, live_start : 3, live_end : 3, mutually_exclusive_with: [  ] }
+    W10:
+    - { name : ig_md.lemon.bhash, live_start : 1, live_end : 5, mutually_exclusive_with: [  ] }
+    - { name : ig_md.lemon.l5_slot, live_start : 3, live_end : 3, mutually_exclusive_with: [  ] }
+phv egress:
+  context_json:
+parser ingress:
+  start: $entry_point
+  init_zero: [ B0, H3, W3, B2, B3, W10, W9, W8, W5, W7, B1, B5, W6, W4, B4, B6 ]
+  bitwise_or: [ B1 ]
+  hdr_len_adj: 16
+  states:
+    $entry_point:
+      *:
+        load: { byte1 : 0 }
+        buf_req: 1
+        next: start
+    start:
+      match: [ byte1 ]
+      0b1*******:
+        0..1: H2  # bit[7..15] -> H2 bit[8..0]: ingress::ig_intr_md.ingress_port
+        shift: 8
+        buf_req: 8
+        next: end
+      0b0*******:
+        0..1: H2  # bit[7..15] -> H2 bit[8..0]: ingress::ig_intr_md.ingress_port
+        load: { half : 28..29 }
+        shift: 8
+        buf_req: 30
+        next: TofinoIngressParser_parse_port_metadata
+    TofinoIngressParser_parse_port_metadata:
+      match: [ half ]
+      0x0800:
+        8..9: TH8  # ingress::hdr.ethernet.dst_addr[47:32].32-47
+        10..13: TW4  # ingress::hdr.ethernet.dst_addr[31:0].0-31
+        14..15: TH7  # ingress::hdr.ethernet.src_addr[47:32].32-47
+        16: TB1  # ingress::hdr.ethernet.src_addr[31:24].24-31
+        17: TB0  # ingress::hdr.ethernet.src_addr[23:16].16-23
+        18..19: TH5  # ingress::hdr.ethernet.src_addr[15:0].0-15
+        20..21: TH6  # ingress::hdr.ethernet.ether_type
+        B1: 1  # value 1 -> B1 bit[0]: ingress::hdr.ethernet.$valid
+        load: { byte1 : 31 }
+        shift: 22
+        buf_req: 32
+        next: parse_ipv4
+      0x0806:
+        8..9: TH8  # ingress::hdr.ethernet.dst_addr[47:32].32-47
+        10..13: TW4  # ingress::hdr.ethernet.dst_addr[31:0].0-31
+        14..15: TH7  # ingress::hdr.ethernet.src_addr[47:32].32-47
+        16: TB1  # ingress::hdr.ethernet.src_addr[31:24].24-31
+        17: TB0  # ingress::hdr.ethernet.src_addr[23:16].16-23
+        18..19: TH5  # ingress::hdr.ethernet.src_addr[15:0].0-15
+        20..21: TH6  # ingress::hdr.ethernet.ether_type
+        B1: 1  # value 1 -> B1 bit[0]: ingress::hdr.ethernet.$valid
+        shift: 22
+        buf_req: 22
+        next: parse_arp
+      0x8100:
+        8..9: TH8  # ingress::hdr.ethernet.dst_addr[47:32].32-47
+        10..13: TW4  # ingress::hdr.ethernet.dst_addr[31:0].0-31
+        14..15: TH7  # ingress::hdr.ethernet.src_addr[47:32].32-47
+        16: TB1  # ingress::hdr.ethernet.src_addr[31:24].24-31
+        17: TB0  # ingress::hdr.ethernet.src_addr[23:16].16-23
+        18..19: TH5  # ingress::hdr.ethernet.src_addr[15:0].0-15
+        20..21: TH6  # ingress::hdr.ethernet.ether_type
+        B1: 1  # value 1 -> B1 bit[0]: ingress::hdr.ethernet.$valid
+        load: { half : 24..25 }
+        shift: 22
+        buf_req: 26
+        next: parse_vlan
+      0x****:
+        8..9: TH8  # ingress::hdr.ethernet.dst_addr[47:32].32-47
+        10..13: TW4  # ingress::hdr.ethernet.dst_addr[31:0].0-31
+        14..15: TH7  # ingress::hdr.ethernet.src_addr[47:32].32-47
+        16: TB1  # ingress::hdr.ethernet.src_addr[31:24].24-31
+        17: TB0  # ingress::hdr.ethernet.src_addr[23:16].16-23
+        18..19: TH5  # ingress::hdr.ethernet.src_addr[15:0].0-15
+        20..21: TH6  # ingress::hdr.ethernet.ether_type
+        B1: 1  # value 1 -> B1 bit[0]: ingress::hdr.ethernet.$valid
+        shift: 22
+        buf_req: 22
+        next: end
+    parse_ipv4:
+      match: [ byte1 ]
+      0x06:
+        0..3: TW0
+            # - bit[0..3] -> TW0 bit[31..28]: ingress::hdr.ipv4.version
+            # - bit[4..7] -> TW0 bit[27..24]: ingress::hdr.ipv4.ihl
+            # - bit[8..15] -> TW0 bit[23..16]: ingress::hdr.ipv4.diffserv
+            # - bit[16..31] -> TW0 bit[15..0]: ingress::hdr.ipv4.total_len
+        4..5: TH1  # ingress::hdr.ipv4.identification
+        6..7: TH0
+            # - bit[48..50] -> TH0 bit[15..13]: ingress::hdr.ipv4.flags
+            # - bit[51..63] -> TH0 bit[12..0]: ingress::hdr.ipv4.frag_offset
+        8..11: TW3
+            # - bit[64..71] -> TW3 bit[31..24]: ingress::hdr.ipv4.ttl
+            # - bit[72..79] -> TW3 bit[23..16]: ingress::hdr.ipv4.protocol
+            # - bit[80..95] -> TW3 bit[15..0]: ingress::hdr.ipv4.hdr_checksum
+        12..15: W1  # ingress::hdr.ipv4.src_addr
+        16..19: W0  # ingress::hdr.ipv4.dst_addr
+        B1: 2  # value 1 -> B1 bit[1]: ingress::hdr.ipv4.$valid
+        shift: 20
+        buf_req: 20
+        next: parse_tcp
+      0x11:
+        0..3: TW0
+            # - bit[0..3] -> TW0 bit[31..28]: ingress::hdr.ipv4.version
+            # - bit[4..7] -> TW0 bit[27..24]: ingress::hdr.ipv4.ihl
+            # - bit[8..15] -> TW0 bit[23..16]: ingress::hdr.ipv4.diffserv
+            # - bit[16..31] -> TW0 bit[15..0]: ingress::hdr.ipv4.total_len
+        4..5: TH1  # ingress::hdr.ipv4.identification
+        6..7: TH0
+            # - bit[48..50] -> TH0 bit[15..13]: ingress::hdr.ipv4.flags
+            # - bit[51..63] -> TH0 bit[12..0]: ingress::hdr.ipv4.frag_offset
+        8..11: TW3
+            # - bit[64..71] -> TW3 bit[31..24]: ingress::hdr.ipv4.ttl
+            # - bit[72..79] -> TW3 bit[23..16]: ingress::hdr.ipv4.protocol
+            # - bit[80..95] -> TW3 bit[15..0]: ingress::hdr.ipv4.hdr_checksum
+        12..15: W1  # ingress::hdr.ipv4.src_addr
+        16..19: W0  # ingress::hdr.ipv4.dst_addr
+        B1: 2  # value 1 -> B1 bit[1]: ingress::hdr.ipv4.$valid
+        shift: 20
+        buf_req: 20
+        next: parse_udp
+      0x01:
+        0..3: TW0
+            # - bit[0..3] -> TW0 bit[31..28]: ingress::hdr.ipv4.version
+            # - bit[4..7] -> TW0 bit[27..24]: ingress::hdr.ipv4.ihl
+            # - bit[8..15] -> TW0 bit[23..16]: ingress::hdr.ipv4.diffserv
+            # - bit[16..31] -> TW0 bit[15..0]: ingress::hdr.ipv4.total_len
+        4..5: TH1  # ingress::hdr.ipv4.identification
+        6..7: TH0
+            # - bit[48..50] -> TH0 bit[15..13]: ingress::hdr.ipv4.flags
+            # - bit[51..63] -> TH0 bit[12..0]: ingress::hdr.ipv4.frag_offset
+        8..11: TW3
+            # - bit[64..71] -> TW3 bit[31..24]: ingress::hdr.ipv4.ttl
+            # - bit[72..79] -> TW3 bit[23..16]: ingress::hdr.ipv4.protocol
+            # - bit[80..95] -> TW3 bit[15..0]: ingress::hdr.ipv4.hdr_checksum
+        12..15: W1  # ingress::hdr.ipv4.src_addr
+        16..19: W0  # ingress::hdr.ipv4.dst_addr
+        B1: 2  # value 1 -> B1 bit[1]: ingress::hdr.ipv4.$valid
+        shift: 20
+        buf_req: 20
+        next: parse_icmp
+      0x**:
+        0..3: TW0
+            # - bit[0..3] -> TW0 bit[31..28]: ingress::hdr.ipv4.version
+            # - bit[4..7] -> TW0 bit[27..24]: ingress::hdr.ipv4.ihl
+            # - bit[8..15] -> TW0 bit[23..16]: ingress::hdr.ipv4.diffserv
+            # - bit[16..31] -> TW0 bit[15..0]: ingress::hdr.ipv4.total_len
+        4..5: TH1  # ingress::hdr.ipv4.identification
+        6..7: TH0
+            # - bit[48..50] -> TH0 bit[15..13]: ingress::hdr.ipv4.flags
+            # - bit[51..63] -> TH0 bit[12..0]: ingress::hdr.ipv4.frag_offset
+        8..11: TW3
+            # - bit[64..71] -> TW3 bit[31..24]: ingress::hdr.ipv4.ttl
+            # - bit[72..79] -> TW3 bit[23..16]: ingress::hdr.ipv4.protocol
+            # - bit[80..95] -> TW3 bit[15..0]: ingress::hdr.ipv4.hdr_checksum
+        12..15: W1  # ingress::hdr.ipv4.src_addr
+        16..19: W0  # ingress::hdr.ipv4.dst_addr
+        B1: 2  # value 1 -> B1 bit[1]: ingress::hdr.ipv4.$valid
+        shift: 20
+        buf_req: 20
+        next: end
+    parse_tcp:
+      *:
+        0..1: TH4  # ingress::hdr.tcp.src_port
+        2..3: TH3  # ingress::hdr.tcp.dst_port
+        4..7: W2  # ingress::hdr.tcp.seq_no
+        8..11: TW5  # ingress::hdr.tcp.ack_no
+        12..15: TW1
+            # - bit[96..99] -> TW1 bit[31..28]: ingress::hdr.tcp.data_offset
+            # - bit[100..103] -> TW1 bit[27..24]: ingress::hdr.tcp.res
+            # - bit[104..111] -> TW1 bit[23..16]: ingress::hdr.tcp.flags
+            # - bit[112..127] -> TW1 bit[15..0]: ingress::hdr.tcp.window
+        16..17: H1  # ingress::hdr.tcp.checksum
+        18..19: TH2  # ingress::hdr.tcp.urgent_ptr
+        B1: 4  # value 1 -> B1 bit[2]: ingress::hdr.tcp.$valid
+        shift: 20
+        buf_req: 20
+        next: end
+    parse_udp:
+      *:
+        0..3: TW1
+            # - bit[0..15] -> TW1 bit[31..16]: ingress::hdr.udp.src_port
+            # - bit[16..31] -> TW1 bit[15..0]: ingress::hdr.udp.dst_port
+        4..5: TH2  # ingress::hdr.udp.hdr_length
+        6..7: H1  # ingress::hdr.udp.checksum
+        8..11: W2  # ingress::hdr.udp.payload
+        B1: 8  # value 1 -> B1 bit[3]: ingress::hdr.udp.$valid
+        shift: 12
+        buf_req: 12
+        next: end
+    parse_icmp:
+      *:
+        0..3: TW1
+            # - bit[0..7] -> TW1 bit[31..24]: ingress::hdr.icmp.type_
+            # - bit[8..15] -> TW1 bit[23..16]: ingress::hdr.icmp.code
+            # - bit[16..31] -> TW1 bit[15..0]: ingress::hdr.icmp.hdr_checksum
+        B1: 16  # value 1 -> B1 bit[4]: ingress::hdr.icmp.$valid
+        shift: 4
+        buf_req: 4
+        next: end
+    parse_arp:
+      *:
+        0..3: TW1
+            # - bit[0..15] -> TW1 bit[31..16]: ingress::hdr.arp.hw_type
+            # - bit[16..31] -> TW1 bit[15..0]: ingress::hdr.arp.proto_type
+        4..7: TW0
+            # - bit[32..39] -> TW0 bit[31..24]: ingress::hdr.arp.hw_addr_len
+            # - bit[40..47] -> TW0 bit[23..16]: ingress::hdr.arp.proto_addr_len
+            # - bit[48..63] -> TW0 bit[15..0]: ingress::hdr.arp.opcode
+        B1: 32  # value 1 -> B1 bit[5]: ingress::hdr.arp.$valid
+        shift: 8
+        buf_req: 8
+        next: end
+    parse_vlan:
+      match: [ half ]
+      0x0800:
+        0..3: TW2
+            # - bit[0..2] -> TW2 bit[31..29]: ingress::hdr.vlan_tag.pcp
+            # - bit[3] -> TW2 bit[28]: ingress::hdr.vlan_tag.cfi
+            # - bit[4..15] -> TW2 bit[27..16]: ingress::hdr.vlan_tag.vid
+            # - bit[16..31] -> TW2 bit[15..0]: ingress::hdr.vlan_tag.ether_type
+        B1: 64  # value 1 -> B1 bit[6]: ingress::hdr.vlan_tag.$valid
+        load: { byte1 : 13 }
+        shift: 4
+        buf_req: 14
+        next: parse_ipv4
+      0x0806:
+        0..3: TW2
+            # - bit[0..2] -> TW2 bit[31..29]: ingress::hdr.vlan_tag.pcp
+            # - bit[3] -> TW2 bit[28]: ingress::hdr.vlan_tag.cfi
+            # - bit[4..15] -> TW2 bit[27..16]: ingress::hdr.vlan_tag.vid
+            # - bit[16..31] -> TW2 bit[15..0]: ingress::hdr.vlan_tag.ether_type
+        B1: 64  # value 1 -> B1 bit[6]: ingress::hdr.vlan_tag.$valid
+        shift: 4
+        buf_req: 4
+        next: parse_arp
+      0x****:
+        0..3: TW2
+            # - bit[0..2] -> TW2 bit[31..29]: ingress::hdr.vlan_tag.pcp
+            # - bit[3] -> TW2 bit[28]: ingress::hdr.vlan_tag.cfi
+            # - bit[4..15] -> TW2 bit[27..16]: ingress::hdr.vlan_tag.vid
+            # - bit[16..31] -> TW2 bit[15..0]: ingress::hdr.vlan_tag.ether_type
+        B1: 64  # value 1 -> B1 bit[6]: ingress::hdr.vlan_tag.$valid
+        shift: 4
+        buf_req: 4
+        next: end
+deparser ingress:
+  dictionary:
+    TH8: B1(0)  # ingress::hdr.ethernet.dst_addr.32-47 if ingress::hdr.ethernet.$valid
+    TW4: B1(0)  # ingress::hdr.ethernet.dst_addr.0-31 if ingress::hdr.ethernet.$valid
+    TH7: B1(0)  # ingress::hdr.ethernet.src_addr.32-47 if ingress::hdr.ethernet.$valid
+    TB1: B1(0)  # ingress::hdr.ethernet.src_addr.24-31 if ingress::hdr.ethernet.$valid
+    TB0: B1(0)  # ingress::hdr.ethernet.src_addr.16-23 if ingress::hdr.ethernet.$valid
+    TH5: B1(0)  # ingress::hdr.ethernet.src_addr.0-15 if ingress::hdr.ethernet.$valid
+    TH6: B1(0)  # ingress::hdr.ethernet.ether_type if ingress::hdr.ethernet.$valid
+    TW2: B1(6)
+        # - bit[31..29]: ingress::hdr.vlan_tag.pcp if ingress::hdr.vlan_tag.$valid
+        # - bit[28]: ingress::hdr.vlan_tag.cfi if ingress::hdr.vlan_tag.$valid
+        # - bit[27..16]: ingress::hdr.vlan_tag.vid if ingress::hdr.vlan_tag.$valid
+        # - bit[15..0]: ingress::hdr.vlan_tag.ether_type if ingress::hdr.vlan_tag.$valid
+    TW1: B1(5)
+        # - bit[31..16]: ingress::hdr.arp.hw_type if ingress::hdr.arp.$valid
+        # - bit[15..0]: ingress::hdr.arp.proto_type if ingress::hdr.arp.$valid
+    TW0: B1(5)
+        # - bit[31..24]: ingress::hdr.arp.hw_addr_len if ingress::hdr.arp.$valid
+        # - bit[23..16]: ingress::hdr.arp.proto_addr_len if ingress::hdr.arp.$valid
+        # - bit[15..0]: ingress::hdr.arp.opcode if ingress::hdr.arp.$valid
+    TW0: B1(1)
+        # - bit[31..28]: ingress::hdr.ipv4.version if ingress::hdr.ipv4.$valid
+        # - bit[27..24]: ingress::hdr.ipv4.ihl if ingress::hdr.ipv4.$valid
+        # - bit[23..16]: ingress::hdr.ipv4.diffserv if ingress::hdr.ipv4.$valid
+        # - bit[15..0]: ingress::hdr.ipv4.total_len if ingress::hdr.ipv4.$valid
+    TH1: B1(1)  # ingress::hdr.ipv4.identification if ingress::hdr.ipv4.$valid
+    TH0: B1(1)
+        # - bit[15..13]: ingress::hdr.ipv4.flags if ingress::hdr.ipv4.$valid
+        # - bit[12..0]: ingress::hdr.ipv4.frag_offset if ingress::hdr.ipv4.$valid
+    TW3: B1(1)
+        # - bit[31..24]: ingress::hdr.ipv4.ttl if ingress::hdr.ipv4.$valid
+        # - bit[23..16]: ingress::hdr.ipv4.protocol if ingress::hdr.ipv4.$valid
+        # - bit[15..0]: ingress::hdr.ipv4.hdr_checksum if ingress::hdr.ipv4.$valid
+    W1: B1(1)  # ingress::hdr.ipv4.src_addr if ingress::hdr.ipv4.$valid
+    W0: B1(1)  # ingress::hdr.ipv4.dst_addr if ingress::hdr.ipv4.$valid
+    TH4: B1(2)  # ingress::hdr.tcp.src_port if ingress::hdr.tcp.$valid
+    TH3: B1(2)  # ingress::hdr.tcp.dst_port if ingress::hdr.tcp.$valid
+    W2: B1(2)  # ingress::hdr.tcp.seq_no if ingress::hdr.tcp.$valid
+    TW5: B1(2)  # ingress::hdr.tcp.ack_no if ingress::hdr.tcp.$valid
+    TW1: B1(2)
+        # - bit[31..28]: ingress::hdr.tcp.data_offset if ingress::hdr.tcp.$valid
+        # - bit[27..24]: ingress::hdr.tcp.res if ingress::hdr.tcp.$valid
+        # - bit[23..16]: ingress::hdr.tcp.flags if ingress::hdr.tcp.$valid
+        # - bit[15..0]: ingress::hdr.tcp.window if ingress::hdr.tcp.$valid
+    H1: B1(2)  # ingress::hdr.tcp.checksum if ingress::hdr.tcp.$valid
+    TH2: B1(2)  # ingress::hdr.tcp.urgent_ptr if ingress::hdr.tcp.$valid
+    TW1: B1(3)
+        # - bit[31..16]: ingress::hdr.udp.src_port if ingress::hdr.udp.$valid
+        # - bit[15..0]: ingress::hdr.udp.dst_port if ingress::hdr.udp.$valid
+    TH2: B1(3)  # ingress::hdr.udp.hdr_length if ingress::hdr.udp.$valid
+    H1: B1(3)  # ingress::hdr.udp.checksum if ingress::hdr.udp.$valid
+    W2: B1(3)  # ingress::hdr.udp.payload if ingress::hdr.udp.$valid
+    TW1: B1(4)
+        # - bit[31..24]: ingress::hdr.icmp.type_ if ingress::hdr.icmp.$valid
+        # - bit[23..16]: ingress::hdr.icmp.code if ingress::hdr.icmp.$valid
+        # - bit[15..0]: ingress::hdr.icmp.hdr_checksum if ingress::hdr.icmp.$valid
+  egress_unicast_port: H0(0..8)  # bit[8..0]: ingress::ig_intr_md_for_tm.ucast_egress_port
+  bypss_egr: B0(0..0)  # bit[0]: ingress::ig_intr_md_for_tm.bypass_egress
+parser egress:
+  start: $entry_point.start
+  hdr_len_adj: 0
+  meta_opt: 0
+  states:
+    $entry_point.start:
+      *:
+        buf_req: 0
+        next: end
+deparser egress:
+  dictionary: {}
+stage 0 ingress:
+  phase0_match SwitchIngressParser.$PORT_METADATA:
+    p4:
+      name: SwitchIngressParser.$PORT_METADATA
+      size: 288
+      preferred_match_type: exact
+      match_type: exact
+    size: 288
+    p4_param_order:
+      ig_intr_md.ingress_port: { type: exact, size: 9 }
+    format: {ig_intr_md: 0..63}
+    constant_value: 0
+    actions:
+      set_port_metadata:
+      - handle: 0x20000000
+      - p4_param_order: { ig_intr_md: 64 } 
+  hash_action tbl_compute_hash3 0:
+    p4: { name: tbl_compute_hash3, hidden: true }
+    row: 1
+    result_bus: 0
+    hash_dist:
+      0: { hash: 0, mask: 0xffff, shift: 0 }
+      1: { hash: 0, mask: 0xffff, shift: 0 }
+    input_xbar:
+      exact group 0: { 0: hdr.ipv4.src_addr }
+      hash 0:
+        0..15: slice(stripe(crc_rev(0x82510ee2, 0xffffffff, 0xffffffff, 32, { 0: hdr.ipv4.src_addr }, { })), 0..15)
+      hash group 0:
+        table: [0]
+        seed: 0xb2bb
+      exact group 0: { 0: hdr.ipv4.src_addr }
+      hash 0:
+        16..31: slice(stripe(crc_rev(0x82510ee2, 0xffffffff, 0xffffffff, 32, { 0: hdr.ipv4.src_addr }, { })), 16..31)
+      hash group 0:
+        table: [0]
+        seed: 0x7aa50000
+    gateway:
+      name: tbl_compute_hash3-gateway
+      row: 1
+      bus: 0
+      unit: 1
+      0x0:  tbl_compute_hash2
+      miss:  tbl_compute_hash2
+      condition: 
+        expression: "true(always hit)"
+        true:  tbl_compute_hash2
+        false:  tbl_compute_hash2
+    next: []
+    action_bus: { 18 : hash_dist(1, 0..7, hi), 19 : hash_dist(1, 8..15, hi), 96..99 : hash_dist(0, 1) }
+    instruction: tbl_compute_hash3($DEFAULT, $DEFAULT)
+    actions:
+      SwitchIngress.compute_hash3(0, 1):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000005
+      - next_table: 0
+      - set B2, hash_dist(1, 0..7)
+      - set B3, hash_dist(1, 8..15)
+      - set W3(0..15), hash_dist(0, 0..15)
+    default_action: SwitchIngress.compute_hash3
+  hash_action tbl_compute_hash2 1:
+    p4: { name: tbl_compute_hash2, hidden: true }
+    row: 0
+    result_bus: 1
+    hash_dist:
+      2: { hash: 0, mask: 0xffff, shift: 0 }
+    input_xbar:
+      exact group 0: { 0: hdr.ipv4.src_addr, 32: hdr.ipv4.dst_addr, 64: hdr.tcp.seq_no, 96: hdr.udp.payload }
+      exact group 1: { 0: hdr.tcp.checksum, 16: hdr.udp.checksum }
+      hash 0:
+        32..47: slice(stripe(crc_rev(0x82670eab, 0xffffffff, 0xffffffff, 160, { 0: hdr.ipv4.dst_addr, 32: hdr.ipv4.src_addr }, { })), 0..15)
+      hash 1:
+        32..47: slice(stripe(crc_rev(0x82670eab, 0xffffffff, 0xffffffff, 160, { 96: hdr.udp.payload, 128: hdr.tcp.seq_no }, { })), 0..15)
+      hash 2:
+        32..47: slice(stripe(crc_rev(0x82670eab, 0xffffffff, 0xffffffff, 160, { 64: hdr.udp.checksum, 80: hdr.tcp.checksum }, { })), 0..15)
+      hash group 0:
+        table: [0, 1, 2]
+        seed: 0xad5300000000
+    gateway:
+      name: tbl_compute_hash2-gateway
+      row: 1
+      bus: 0
+      unit: 0
+      0x0:  tbl_compute_hash1
+      miss:  tbl_compute_hash1
+      condition: 
+        expression: "true(always hit)"
+        true:  tbl_compute_hash1
+        false:  tbl_compute_hash1
+    next: []
+    action_bus: { 100..103 : hash_dist(2) }
+    instruction: tbl_compute_hash2($DEFAULT, $DEFAULT)
+    actions:
+      SwitchIngress.compute_hash2(0, 2):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000004
+      - next_table: 0
+      - set W10(0..15), hash_dist(2, 0..15)
+    default_action: SwitchIngress.compute_hash2
+  hash_action tbl_compute_hash1 2:
+    p4: { name: tbl_compute_hash1, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      3: { hash: 1, mask: 0xffff, shift: 0 }
+    input_xbar:
+      exact group 1: { 64: hdr.ipv4.dst_addr, 96: hdr.ipv4.src_addr }
+      exact group 2: { 0: hdr.tcp.seq_no, 32: hdr.udp.payload, 64: hdr.tcp.checksum, 80: hdr.udp.checksum }
+      hash 3:
+        0..15: slice(stripe(crc_rev(0x8a155864, 0xffffffff, 0xffffffff, 160, { 0: hdr.ipv4.dst_addr, 32: hdr.ipv4.src_addr }, { })), 0..15)
+      hash 4:
+        0..15: slice(stripe(crc_rev(0x8a155864, 0xffffffff, 0xffffffff, 160, { 96: hdr.udp.payload, 128: hdr.tcp.seq_no }, { })), 0..15)
+      hash 5:
+        0..15: slice(stripe(crc_rev(0x8a155864, 0xffffffff, 0xffffffff, 160, { 64: hdr.udp.checksum, 80: hdr.tcp.checksum }, { })), 0..15)
+      hash group 1:
+        table: [3, 4, 5]
+        seed: 0x6820
+    gateway:
+      name: tbl_compute_hash1-gateway
+      row: 0
+      bus: 0
+      unit: 1
+      0x0:  tbl_lemon_X284
+      miss:  tbl_lemon_X284
+      condition: 
+        expression: "true(always hit)"
+        true:  tbl_lemon_X284
+        false:  tbl_lemon_X284
+    next: []
+    action_bus: { 32..33 : hash_dist(3, lo) }
+    instruction: tbl_compute_hash1($DEFAULT, $DEFAULT)
+    actions:
+      SwitchIngress.compute_hash1(0, 3):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000003
+      - next_table: 0
+      - set H3, hash_dist(3, 0..15)
+    default_action: SwitchIngress.compute_hash1
+  ternary_match tbl_lemon_X284 3:
+    p4: { name: tbl_lemon_X284, hidden: true }
+    gateway:
+      name: cond-8
+      input_xbar:
+        exact group 3: { 0: ig_intr_md.ingress_port }
+      row: 0
+      bus: 0
+      unit: 0
+      match: { 0: ig_intr_md.ingress_port(0..7), 8: ig_intr_md.ingress_port(8) }
+      0b*******010001110: run_table
+      miss:  tbl_lemon_X299
+      condition: 
+        expression: "(ig_intr_md.ingress_port == 142)"
+        true:  tbl_lemon_X284
+        false:  tbl_lemon_X299
+    hit: [  tbl_lemon_X299 ]
+    miss:  tbl_lemon_X299
+    indirect: tbl_lemon_X284$tind
+  ternary_indirect tbl_lemon_X284$tind:
+    row: 0
+    bus: 0
+    format: { action: 0..0, immediate: 1..9 }
+    action_bus: { 36..37 : immediate(0..8) }
+    instruction: tbl_lemon_X284$tind(action, $DEFAULT)
+    actions:
+      lemon_X284(1, 4):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000001
+      - next_table: 0
+      - { $constant0: immediate(0..8), $constant0: 141 }
+      - set ig_intr_md_for_tm.ucast_egress_port, $constant0
+      - set ig_intr_md_for_tm.bypass_egress, 1
+    default_action: lemon_X284
+stage 1 ingress:
+  dependency: match
+  ternary_match tbl_lemon_X299 0:
+    p4: { name: tbl_lemon_X299, hidden: true }
+    hit: [  lemon_match_0 ]
+    miss:  lemon_match_0
+    indirect: tbl_lemon_X299$tind
+  ternary_indirect tbl_lemon_X299$tind:
+    row: 0
+    bus: 1
+    format: { action: 0..0 }
+    instruction: tbl_lemon_X299$tind(action, $DEFAULT)
+    actions:
+      lemon_X299(0, 1):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000006
+      - next_table: 0
+      - set ig_md.lemon.heavy_slot.0-9, ig_md.lemon.shash.0-15(0..9)
+      - set ig_md.lemon.heavy_slot.10-10, ig_md.lemon.shash.0-15(10..10)
+      - set ig_md.lemon.heavy_slot.11-12, ig_md.lemon.shash.0-15(11..12)
+      - set ig_md.lemon.l1_slot.3-12, ig_md.lemon.shash.0-15(0..9)
+      - set ig_md.lemon.l1_slot.13-13, ig_md.lemon.shash.0-15(10..10)
+      - set ig_md.lemon.l1_slot.19-19, ig_md.lemon.shash.16-23(0..0)
+      - set B0(1..3), B2(0..2)
+      - set W3(16..31), W3(0..15)
+      - set W9(0..4), W3(11..15)
+    default_action: lemon_X299
+  ternary_match lemon_match_0 1:
+    p4: { name: SwitchIngress.lemon_match, size: 8 }
+    p4_param_order: 
+      ig_md.lemon.dhash: { type: range, size: 16, full_size: 16 }
+    row: 0
+    bus: 0
+    column: 0
+    input_xbar:
+      ternary group 0: { 0: ig_md.lemon.dhash, 16: ig_md.lemon.dhash }
+    match:
+    - { group: 0, byte_config: 3, dirtcam: 0xfa }
+    hit: [  tbl_lemon_X312 ]
+    miss:  tbl_lemon_X312
+    indirect: lemon_match_0$tind
+  ternary_indirect lemon_match_0$tind:
+    row: 0
+    bus: 0
+    column: 2
+    input_xbar:
+      ternary group 0: { 0: ig_md.lemon.dhash, 16: ig_md.lemon.dhash }
+    format: { action: 0..2 }
+    instruction: lemon_match_0$tind(action, $DEFAULT)
+    actions:
+      SwitchIngress.return_tag1(0, 2):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x2000000c
+      - next_table: 0
+      - set ig_md.lemon.tag, 1
+      SwitchIngress.return_tag2(1, 4):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: false, reason: has_const_default_action }
+      - handle: 0x2000000d
+      - next_table: 0
+      - set ig_md.lemon.tag, 2
+      SwitchIngress.return_tag3(2, 6):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: false, reason: has_const_default_action }
+      - handle: 0x2000000e
+      - next_table: 0
+      - set ig_md.lemon.tag, 1
+      SwitchIngress.return_tag4(3, 8):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: false, reason: has_const_default_action }
+      - handle: 0x2000000f
+      - next_table: 0
+      - set ig_md.lemon.tag, 1
+      SwitchIngress.return_tag5(4, 10):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: false, reason: has_const_default_action }
+      - handle: 0x20000010
+      - next_table: 0
+      - set ig_md.lemon.tag, 1
+    default_action: SwitchIngress.return_tag1
+stage 2 ingress:
+  dependency: match
+  ternary_match tbl_lemon_X312 0:
+    p4: { name: tbl_lemon_X312, hidden: true }
+    hit: [  tbl_lemon_X315 ]
+    miss:  tbl_lemon_X315
+    indirect: tbl_lemon_X312$tind
+  ternary_indirect tbl_lemon_X312$tind:
+    row: 1
+    bus: 0
+    format: { action: 0..0 }
+    instruction: tbl_lemon_X312$tind(action, $DEFAULT)
+    actions:
+      lemon_X312(0, 1):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x2000000a
+      - next_table: 0
+      - set ig_md.lemon.l4_slot.0-4, ig_md.lemon.bhash(0..4)
+      - set ig_md.lemon.l5_slot.9-18, ig_md.lemon.shash.0-15(0..9)
+    default_action: lemon_X312
+  hash_action tbl_lemon_X315 1:
+    p4: { name: tbl_lemon_X315, hidden: true }
+    row: 0
+    result_bus: 1
+    hash_dist:
+      0: { hash: 0, mask: 0x7fffff, shift: 5, expand: 0 }
+    input_xbar:
+      exact group 0: { 2: ig_md.lemon.c_slot.13-15, 11: ig_md.lemon.c_slot.17-31(0..4), 16: ig_md.lemon.c_slot.0-12, 33: ig_md.lemon.c_slot.16-16, 48: ig_md.lemon.c_slot.17-31(5..14) }
+      hash 0:
+        0..12: ig_md.lemon.c_slot.0-12
+        13..15: ig_md.lemon.c_slot.13-15
+        32: ig_md.lemon.c_slot.16-16
+        33..37: ig_md.lemon.c_slot.17-31(0..4)
+        38..38: ig_md.lemon.c_slot.17-31(5)
+      hash group 0:
+        table: [0]
+        seed: 0x0
+    gateway:
+      name: tbl_lemon_X315-gateway
+      row: 1
+      bus: 0
+      unit: 0
+      0x0:  tbl_lemon_X288
+      miss:  tbl_lemon_X288
+      condition: 
+        expression: "true(always hit)"
+        true:  tbl_lemon_X288
+        false:  tbl_lemon_X288
+    next: []
+    stateful: tbl_lemon_X315$salu.SwitchIngress.counter_1(hash_dist 0, $DEFAULT, $DEFAULT)
+    instruction: tbl_lemon_X315($DEFAULT, $DEFAULT)
+    actions:
+      lemon_X315(0, 2):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x2000000b
+      - next_table: 0
+      - set ig_md.lemon.l5_slot.0-2, ig_md.lemon.bhash(0..2)
+      - set ig_md.lemon.l5_slot.3-4, ig_md.lemon.bhash(3..4)
+      - set ig_md.lemon.l5_slot.5-8, ig_md.lemon.bhash(5..8)
+      - tbl_lemon_X315$salu.SwitchIngress.counter_1(counter_1_op_0, $hash_dist)
+    default_action: lemon_X315
+  stateful tbl_lemon_X315$salu.SwitchIngress.counter_1:
+    p4: { name: SwitchIngress.counter_1, size: 131072 }
+    row: [ 15, 13, 11, 9, 7, 5 ]
+    logical_bus: [ S, O, O, O, O, O ]
+    column:
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    maprams: 
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    home_row: 15
+    format: { lo: 32 }
+    actions:
+      counter_1_op_0:
+      - add lo, lo, 1
+      - output alu_lo
+  ternary_match tbl_lemon_X288 2:
+    p4: { name: tbl_lemon_X288, hidden: true }
+    gateway:
+      name: cond-9
+      input_xbar:
+        exact group 0: { 64: ig_intr_md.ingress_port }
+      row: 0
+      bus: 1
+      unit: 1
+      match: { 0: ig_intr_md.ingress_port(0..7), 8: ig_intr_md.ingress_port(8) }
+      0b*******010001101: run_table
+      miss:  tbl_lemon_X334
+      condition: 
+        expression: "(ig_intr_md.ingress_port == 141)"
+        true:  tbl_lemon_X288
+        false:  tbl_lemon_X334
+    hit: [  tbl_lemon_X334 ]
+    miss:  tbl_lemon_X334
+    indirect: tbl_lemon_X288$tind
+  ternary_indirect tbl_lemon_X288$tind:
+    row: 0
+    bus: 1
+    format: { action: 0..0, immediate: 1..9 }
+    action_bus: { 32..33 : immediate(0..8) }
+    instruction: tbl_lemon_X288$tind(action, $DEFAULT)
+    actions:
+      lemon_X288(1, 3):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000002
+      - next_table: 0
+      - { $constant0: immediate(0..8), $constant0: 142 }
+      - set ig_intr_md_for_tm.ucast_egress_port, $constant0
+      - set ig_intr_md_for_tm.bypass_egress, 1
+    default_action: lemon_X288
+  hash_action tbl_lemon_X334 3:
+    p4: { name: tbl_lemon_X334, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      1: { hash: 0, mask: 0x7fffff, shift: 5, expand: 7 }
+    input_xbar:
+      exact group 1: { 0: ig_md.lemon.heavy_slot.0-9, 16: ig_md.lemon.heavy_slot.13-31(6..18), 32: ig_md.lemon.heavy_slot.10-10, 42: ig_md.lemon.heavy_slot.13-31(0..5), 96: ig_md.lemon.heavy_slot.11-12 }
+      hash 2:
+        16..25: ig_md.lemon.heavy_slot.0-9
+        26: ig_md.lemon.heavy_slot.10-10
+        27..28: 0
+        29..31: ig_md.lemon.heavy_slot.13-31(0..2)
+        39..41: ig_md.lemon.heavy_slot.13-31(3..5)
+        42..45: ig_md.lemon.heavy_slot.13-31(6..9)
+      hash 3:
+        16..26: 0
+        27..28: ig_md.lemon.heavy_slot.11-12
+        29..31: 0
+        39..45: 0
+      hash group 0:
+        table: [2, 3]
+        seed: 0x0
+    gateway:
+      name: cond-14
+      input_xbar:
+        exact group 0: { 80: ig_md.lemon.tag }
+      row: 0
+      bus: 0
+      unit: 0
+      payload_row: 0
+      payload_unit: 0
+      payload: 0xc001
+      format: { action: 0..0, meter_addr: 1..13, meter_pfe: 14..14, meter_type: 15..17 }
+      match: { 0: ig_md.lemon.tag }
+      0x05:  tbl_lemon_X333
+      miss: run_table
+      condition: 
+        expression: "(ig_md.lemon.tag == 5)"
+        true:  tbl_lemon_X333
+        false:  tbl_lemon_X309
+    next:  tbl_lemon_X309
+    stateful: tbl_lemon_X334$salu.SwitchIngress.Heavy_sip(hash_dist 1, meter_pfe, meter_type)
+    instruction: tbl_lemon_X334(action, $DEFAULT)
+    actions:
+      lemon_X334(1, 0):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000016
+      - next_table: 0
+      - tbl_lemon_X334$salu.SwitchIngress.Heavy_sip(Heavy_sip_op_0, $hash_dist)
+    default_action: lemon_X334
+  stateful tbl_lemon_X334$salu.SwitchIngress.Heavy_sip:
+    p4: { name: SwitchIngress.Heavy_sip, size: 8192 }
+    row: 11
+    logical_bus: S
+    column: [ 0, 1, 2 ]
+    maprams: [ 0, 1, 2 ]
+    home_row: 11
+    input_xbar:
+      exact group 1: { 64: hdr.ipv4.src_addr }
+    data_bytemask: 15
+    format: { lo: 32 }
+    actions:
+      Heavy_sip_op_0:
+      - equ lo, lo
+      - alu_a cmplo, lo, phv_lo
+stage 3 ingress:
+  dependency: match
+  hash_action tbl_lemon_X333 0:
+    p4: { name: tbl_lemon_X333, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      0: { hash: 0, mask: 0x7fffff, shift: 0, expand: 0 }
+    input_xbar:
+      exact group 0: { 7: ig_md.lemon.l5_slot.0-2, 20: ig_md.lemon.l5_slot.9-18, 41: ig_md.lemon.l5_slot.3-4, 48: ig_md.lemon.l5_slot.19-31, 74: ig_md.lemon.l5_slot.5-8 }
+      hash 0:
+        0..2: ig_md.lemon.l5_slot.0-2
+        3..4: ig_md.lemon.l5_slot.3-4
+        5..8: 0
+        9..15: ig_md.lemon.l5_slot.9-18(0..6)
+        32..34: ig_md.lemon.l5_slot.9-18(7..9)
+        35..38: ig_md.lemon.l5_slot.19-31(0..3)
+      hash 1:
+        0..4: 0
+        5..8: ig_md.lemon.l5_slot.5-8
+        9..15: 0
+        32..38: 0
+      hash group 0:
+        table: [0, 1]
+        seed: 0x0
+    gateway:
+      name: tbl_lemon_X333-gateway
+      row: 0
+      bus: 0
+      unit: 0
+      0x0:  tbl_lemon_X309
+      miss:  tbl_lemon_X309
+      condition: 
+        expression: "true(always hit)"
+        true:  tbl_lemon_X309
+        false:  tbl_lemon_X309
+    next: []
+    stateful: tbl_lemon_X333$salu.SwitchIngress.Layer5(hash_dist 0, $DEFAULT, $DEFAULT)
+    instruction: tbl_lemon_X333($DEFAULT, $DEFAULT)
+    actions:
+      lemon_X333(0, 0):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000015
+      - next_table: 0
+      - tbl_lemon_X333$salu.SwitchIngress.Layer5(Layer5_op_0, $hash_dist)
+    default_action: lemon_X333
+  stateful tbl_lemon_X333$salu.SwitchIngress.Layer5:
+    p4: { name: SwitchIngress.Layer5, size: 524288 }
+    row: 15
+    logical_bus: S
+    column: [ 0, 1, 2, 3, 4 ]
+    maprams: [ 0, 1, 2, 3, 4 ]
+    home_row: 15
+    format: { lo: 1 }
+    actions:
+      Layer5_op_0:
+      - set_bit
+      clr_bit_alu$0:
+      - clr_bit
+  ternary_match tbl_lemon_X309 1:
+    p4: { name: tbl_lemon_X309, hidden: true }
+    hit: [  tbl_lemon_X306 ]
+    miss:  tbl_lemon_X306
+    indirect: tbl_lemon_X309$tind
+  ternary_indirect tbl_lemon_X309$tind:
+    row: 0
+    bus: 0
+    format: { action: 0..0 }
+    instruction: tbl_lemon_X309$tind(action, $DEFAULT)
+    actions:
+      lemon_X309(0, 1):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000009
+      - next_table: 0
+      - set ig_md.lemon.l3_slot.0-2, ig_md.lemon.bhash(0..2)
+      - set ig_md.lemon.l3_slot.3-4, ig_md.lemon.bhash(3..4)
+      - set ig_md.lemon.l4_slot.5-14, ig_md.lemon.shash.0-15(0..9)
+      - set ig_md.lemon.l4_slot.15-15, ig_md.lemon.shash.0-15(10..10)
+    default_action: lemon_X309
+stage 4 ingress:
+  dependency: match
+  ternary_match tbl_lemon_X306 0:
+    p4: { name: tbl_lemon_X306, hidden: true }
+    hit: [  tbl_lemon_X330 ]
+    miss:  tbl_lemon_X330
+    indirect: tbl_lemon_X306$tind
+  ternary_indirect tbl_lemon_X306$tind:
+    row: 0
+    bus: 1
+    format: { action: 0..0 }
+    instruction: tbl_lemon_X306$tind(action, $DEFAULT)
+    actions:
+      lemon_X306(0, 1):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000008
+      - next_table: 0
+      - set ig_md.lemon.l2_slot.0-2, ig_md.lemon.bhash(0..2)
+      - set ig_md.lemon.l2_slot.3-4, ig_md.lemon.bhash(3..4)
+      - set ig_md.lemon.l3_slot.5-14, ig_md.lemon.shash.0-15(0..9)
+      - set ig_md.lemon.l3_slot.15-15, ig_md.lemon.shash.0-15(10..10)
+      - set ig_md.lemon.l3_slot.16-17, ig_md.lemon.shash.0-15(11..12)
+    default_action: lemon_X306
+  hash_action tbl_lemon_X330 1:
+    p4: { name: tbl_lemon_X330, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      0: { hash: 0, mask: 0x7fffff, shift: 0, expand: 0 }
+    input_xbar:
+      exact group 0: { 2: ig_md.lemon.l4_slot.15-15, 6: ig_md.lemon.l4_slot.0-4, 11: ig_md.lemon.l4_slot.16-31(0..4), 20: ig_md.lemon.l4_slot.5-14, 48: ig_md.lemon.l4_slot.16-31(5..15) }
+      hash 0:
+        0..4: ig_md.lemon.l4_slot.0-4
+        5..14: ig_md.lemon.l4_slot.5-14
+        15: ig_md.lemon.l4_slot.15-15
+        32..36: ig_md.lemon.l4_slot.16-31(0..4)
+        37..38: ig_md.lemon.l4_slot.16-31(5..6)
+      hash group 0:
+        table: [0]
+        seed: 0x0
+    gateway:
+      name: cond-13
+      input_xbar:
+        exact group 0: { 64: ig_md.lemon.tag }
+      row: 0
+      bus: 0
+      unit: 0
+      payload_row: 0
+      payload_unit: 0
+      payload: 0xc0001
+      format: { action: 0..0, meter_addr: 1..17, meter_pfe: 18..18, meter_type: 19..21 }
+      match: { 0: ig_md.lemon.tag }
+      0x04:  tbl_lemon_X303
+      miss: run_table
+      condition: 
+        expression: "(ig_md.lemon.tag == 4)"
+        true:  tbl_lemon_X303
+        false:  tbl_lemon_X303
+    next:  tbl_lemon_X303
+    stateful: tbl_lemon_X330$salu.SwitchIngress.Layer4(hash_dist 0, meter_pfe, meter_type)
+    instruction: tbl_lemon_X330(action, $DEFAULT)
+    actions:
+      lemon_X330(1, 0):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000014
+      - next_table: 0
+      - tbl_lemon_X330$salu.SwitchIngress.Layer4(Layer4_op_0, $hash_dist)
+    default_action: lemon_X330
+  stateful tbl_lemon_X330$salu.SwitchIngress.Layer4:
+    p4: { name: SwitchIngress.Layer4, size: 131072 }
+    row: 15
+    logical_bus: S
+    column: [ 0, 1 ]
+    maprams: [ 0, 1 ]
+    home_row: 15
+    format: { lo: 1 }
+    actions:
+      Layer4_op_0:
+      - set_bit
+      clr_bit_alu$0:
+      - clr_bit
+stage 5 ingress:
+  dependency: match
+  ternary_match tbl_lemon_X303 0:
+    p4: { name: tbl_lemon_X303, hidden: true }
+    hit: [  tbl_lemon_X327 ]
+    miss:  tbl_lemon_X327
+    indirect: tbl_lemon_X303$tind
+  ternary_indirect tbl_lemon_X303$tind:
+    row: 0
+    bus: 1
+    format: { action: 0..0 }
+    instruction: tbl_lemon_X303$tind(action, $DEFAULT)
+    actions:
+      lemon_X303(0, 1):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000007
+      - next_table: 0
+      - set ig_md.lemon.l1_slot.0-2, ig_md.lemon.bhash(0..2)
+      - set ig_md.lemon.l2_slot.5-14, ig_md.lemon.shash.0-15(0..9)
+      - set ig_md.lemon.l2_slot.15-15, ig_md.lemon.shash.0-15(10..10)
+      - set ig_md.lemon.l2_slot.16-20, ig_md.lemon.shash.0-15(11..15)
+    default_action: lemon_X303
+  hash_action tbl_lemon_X327 1:
+    p4: { name: tbl_lemon_X327, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      0: { hash: 0, mask: 0x7fffff, shift: 0, expand: 0 }
+    input_xbar:
+      exact group 0: { 1: ig_md.lemon.l3_slot.15-15, 10: ig_md.lemon.l3_slot.5-14, 24: ig_md.lemon.l3_slot.18-31(10..13), 34: ig_md.lemon.l3_slot.16-17, 39: ig_md.lemon.l3_slot.3-4, 48: ig_md.lemon.l3_slot.18-31(2..9), 69: ig_md.lemon.l3_slot.0-2, 78: ig_md.lemon.l3_slot.18-31(0..1) }
+      hash 0:
+        0..2: 0
+        3..4: ig_md.lemon.l3_slot.3-4
+        5..14: ig_md.lemon.l3_slot.5-14
+        15: ig_md.lemon.l3_slot.15-15
+        32..33: ig_md.lemon.l3_slot.16-17
+        34..35: 0
+        36..38: ig_md.lemon.l3_slot.18-31(2..4)
+      hash 1:
+        0..2: ig_md.lemon.l3_slot.0-2
+        3..15: 0
+        32..33: 0
+        34..35: ig_md.lemon.l3_slot.18-31(0..1)
+        36..38: 0
+      hash group 0:
+        table: [0, 1]
+        seed: 0x0
+    gateway:
+      name: cond-12
+      input_xbar:
+        exact group 1: { 0: ig_md.lemon.tag }
+      row: 0
+      bus: 0
+      unit: 0
+      payload_row: 0
+      payload_unit: 0
+      payload: 0x300001
+      format: { action: 0..0, meter_addr: 1..19, meter_pfe: 20..20, meter_type: 21..23 }
+      match: { 0: ig_md.lemon.tag }
+      0x03:  tbl_lemon_X324
+      miss: run_table
+      condition: 
+        expression: "(ig_md.lemon.tag == 3)"
+        true:  tbl_lemon_X324
+        false:  tbl_lemon_X324
+    next:  tbl_lemon_X324
+    stateful: tbl_lemon_X327$salu.SwitchIngress.Layer3(hash_dist 0, meter_pfe, meter_type)
+    instruction: tbl_lemon_X327(action, $DEFAULT)
+    actions:
+      lemon_X327(1, 0):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000013
+      - next_table: 0
+      - tbl_lemon_X327$salu.SwitchIngress.Layer3(Layer3_op_0, $hash_dist)
+    default_action: lemon_X327
+  stateful tbl_lemon_X327$salu.SwitchIngress.Layer3:
+    p4: { name: SwitchIngress.Layer3, size: 524288 }
+    row: 15
+    logical_bus: S
+    column: [ 0, 1, 2, 3, 4 ]
+    maprams: [ 0, 1, 2, 3, 4 ]
+    home_row: 15
+    format: { lo: 1 }
+    actions:
+      Layer3_op_0:
+      - set_bit
+      clr_bit_alu$0:
+      - clr_bit
+stage 6 ingress:
+  dependency: match
+  hash_action tbl_lemon_X324 0:
+    p4: { name: tbl_lemon_X324, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      0: { hash: 0, mask: 0x7fffff, shift: 0, expand: 0 }
+    input_xbar:
+      exact group 0: { 1: ig_md.lemon.l2_slot.15-15, 3: ig_md.lemon.l2_slot.0-2, 10: ig_md.lemon.l2_slot.5-14, 28: ig_md.lemon.l2_slot.29-31, 34: ig_md.lemon.l2_slot.16-20, 40: ig_md.lemon.l2_slot.3-4, 48: ig_md.lemon.l2_slot.21-28 }
+      hash 0:
+        0..2: ig_md.lemon.l2_slot.0-2
+        3..4: ig_md.lemon.l2_slot.3-4
+        5..14: ig_md.lemon.l2_slot.5-14
+        15: ig_md.lemon.l2_slot.15-15
+        32..36: ig_md.lemon.l2_slot.16-20
+        37..38: ig_md.lemon.l2_slot.21-28(0..1)
+      hash group 0:
+        table: [0]
+        seed: 0x0
+    gateway:
+      name: cond-11
+      input_xbar:
+        exact group 0: { 64: ig_md.lemon.tag }
+      row: 0
+      bus: 0
+      unit: 0
+      payload_row: 0
+      payload_unit: 0
+      payload: 0xc00001
+      format: { action: 0..0, meter_addr: 1..21, meter_pfe: 22..22, meter_type: 23..25 }
+      match: { 0: ig_md.lemon.tag }
+      0x02:  tbl_lemon_X321
+      miss: run_table
+      condition: 
+        expression: "(ig_md.lemon.tag == 2)"
+        true:  tbl_lemon_X321
+        false:  tbl_lemon_X321
+    next:  tbl_lemon_X321
+    stateful: tbl_lemon_X324$salu.SwitchIngress.Layer2(hash_dist 0, meter_pfe, meter_type)
+    instruction: tbl_lemon_X324(action, $DEFAULT)
+    actions:
+      lemon_X324(1, 0):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000012
+      - next_table: 0
+      - tbl_lemon_X324$salu.SwitchIngress.Layer2(Layer2_op_0, $hash_dist)
+    default_action: lemon_X324
+  stateful tbl_lemon_X324$salu.SwitchIngress.Layer2:
+    p4: { name: SwitchIngress.Layer2, size: 2097152 }
+    row: [ 15, 13, 11 ]
+    logical_bus: [ S, O, O ]
+    column:
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4 ]
+    maprams: 
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4 ]
+    home_row: 15
+    format: { lo: 1 }
+    actions:
+      Layer2_op_0:
+      - set_bit
+      clr_bit_alu$0:
+      - clr_bit
+stage 7 ingress:
+  dependency: concurrent
+  hash_action tbl_lemon_X321 0:
+    p4: { name: tbl_lemon_X321, hidden: true }
+    row: 0
+    result_bus: 0
+    hash_dist:
+      0: { hash: 0, mask: 0x7fffff, shift: 0, expand: 0 }
+    input_xbar:
+      exact group 0: { 0: ig_md.lemon.l1_slot.3-12, 18: ig_md.lemon.l1_slot.20-21, 29: ig_md.lemon.l1_slot.16-18, 32: ig_md.lemon.l1_slot.13-13, 41: ig_md.lemon.l1_slot.30-31, 55: ig_md.lemon.l1_slot.19-19, 56: ig_md.lemon.l1_slot.22-29, 68: ig_md.lemon.l1_slot.0-2, 96: ig_md.lemon.l1_slot.14-15 }
+      hash 0:
+        0..2: 0
+        3..12: ig_md.lemon.l1_slot.3-12
+        13: ig_md.lemon.l1_slot.13-13
+        14..15: 0
+        32..34: ig_md.lemon.l1_slot.16-18
+        35: ig_md.lemon.l1_slot.19-19
+        36..37: ig_md.lemon.l1_slot.20-21
+        38..38: ig_md.lemon.l1_slot.22-29(0)
+      hash 1:
+        0..2: ig_md.lemon.l1_slot.0-2
+        3..13: 0
+        14..15: ig_md.lemon.l1_slot.14-15
+        32..38: 0
+      hash group 0:
+        table: [0, 1]
+        seed: 0x0
+    gateway:
+      name: cond-10
+      input_xbar:
+        exact group 1: { 0: ig_md.lemon.tag }
+      row: 0
+      bus: 0
+      unit: 0
+      payload_row: 0
+      payload_unit: 0
+      payload: 0x1800001
+      format: { action: 0..0, meter_addr: 1..22, meter_pfe: 23..23, meter_type: 24..26 }
+      match: { 0: ig_md.lemon.tag }
+      0x01:  END
+      miss: run_table
+      condition: 
+        expression: "(ig_md.lemon.tag == 1)"
+        true:  END
+        false:  END
+    next:  END
+    stateful: tbl_lemon_X321$salu.SwitchIngress.Layer1(hash_dist 0, meter_pfe, meter_type)
+    instruction: tbl_lemon_X321(action, $DEFAULT)
+    actions:
+      lemon_X321(1, 0):
+      - hit_allowed: { allowed: true }
+      - default_action: { allowed: true, is_constant: true }
+      - handle: 0x20000011
+      - next_table: 0
+      - tbl_lemon_X321$salu.SwitchIngress.Layer1(Layer1_op_0, $hash_dist)
+    default_action: lemon_X321
+  stateful tbl_lemon_X321$salu.SwitchIngress.Layer1:
+    p4: { name: SwitchIngress.Layer1, size: 4194304 }
+    row: [ 15, 13, 11, 9, 7, 5 ]
+    logical_bus: [ S, O, O, O, O, O ]
+    column:
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2 ]
+    maprams: 
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2, 3, 4, 5 ]
+    - [ 0, 1, 2 ]
+    home_row: 15
+    format: { lo: 1 }
+    actions:
+      Layer1_op_0:
+      - set_bit
+      clr_bit_alu$0:
+      - clr_bit
+
+
+primitives: "lemon_X.prim.json"
+dynhash: "lemon_X.dynhash.json"

@@ -1,0 +1,177 @@
++---------------------------------------------------------------------+
+|  Log file: pa.results.log                                           |
+|  Compiler version: 9.9.0                                            |
+|  Created on: Sun Jul  7 06:03:48 2024                               |
+|  Run ID: d02317c81a093854                                           |
++---------------------------------------------------------------------+
+
+Allocation state: Final Allocation
+-----------------------------------------------------------------------------
+|       PHV Group        | Containers Used |  Bits Used   | Bits Available |
+| (container bit widths) |     (% used)    |   (% used)   |                |
+-----------------------------------------------------------------------------
+|         0 (32)         |   11 (68.75%)   | 327 (63.87%) |      512       |
+|         1 (32)         |    0 (0.00%)    |  0 (0.00%)   |      512       |
+|         2 (32)         |    0 (0.00%)    |  0 (0.00%)   |      512       |
+|         3 (32)         |    0 (0.00%)    |  0 (0.00%)   |      512       |
+|    Total for 32 bit    |   11 (17.19%)   | 327 (15.97%) |      2048      |
+|                        |                 |              |                |
+|         4 (8)          |    7 (43.75%)   | 55 (42.97%)  |      128       |
+|         5 (8)          |    0 (0.00%)    |  0 (0.00%)   |      128       |
+|         6 (8)          |    0 (0.00%)    |  0 (0.00%)   |      128       |
+|         7 (8)          |    0 (0.00%)    |  0 (0.00%)   |      128       |
+|    Total for 8 bit     |    7 (10.94%)   | 55 (10.74%)  |      512       |
+|                        |                 |              |                |
+|         8 (16)         |    4 (25.00%)   | 52 (20.31%)  |      256       |
+|         9 (16)         |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|        10 (16)         |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|        11 (16)         |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|        12 (16)         |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|        13 (16)         |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|    Total for 16 bit    |    4 (4.17%)    |  52 (3.39%)  |      1536      |
+|                        |                 |              |                |
+|       14 (32) T        |    6 (37.50%)   | 192 (37.50%) |      512       |
+|       15 (32) T        |    0 (0.00%)    |  0 (0.00%)   |      512       |
+|    Total for 32 bit    |    6 (18.75%)   | 192 (18.75%) |      1024      |
+|                        |                 |              |                |
+|        16 (8) T        |    2 (12.50%)   | 16 (12.50%)  |      128       |
+|        17 (8) T        |    0 (0.00%)    |  0 (0.00%)   |      128       |
+|    Total for 8 bit     |    2 (6.25%)    |  16 (6.25%)  |      256       |
+|                        |                 |              |                |
+|       18 (16) T        |    9 (56.25%)   | 144 (56.25%) |      256       |
+|       19 (16) T        |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|       20 (16) T        |    0 (0.00%)    |  0 (0.00%)   |      256       |
+|    Total for 16 bit    |    9 (18.75%)   | 144 (18.75%) |      768       |
+|                        |                 |              |                |
+|       MAU total        |    22 (9.82%)   | 434 (10.60%) |      4096      |
+|     Tagalong total     |   17 (15.18%)   | 352 (17.19%) |      2048      |
+|     Overall total      |   39 (11.61%)   | 786 (12.79%) |      6144      |
+-----------------------------------------------------------------------------
+
+--------------------------------------------
+PHV Allocation
+--------------------------------------------
+
+Allocations in Group 0 32 bits
+  32-bit PHV 0 (ingress): phv0[31:0] = hdr.ipv4.dst_addr[31:0] (deparsed)
+  32-bit PHV 1 (ingress): phv1[31:0] = hdr.ipv4.src_addr[31:0] (deparsed)
+  32-bit PHV 2 (ingress): phv2[31:0] = hdr.tcp.seq_no[31:0] (deparsed)
+  32-bit PHV 2 (ingress): phv2[31:0] = hdr.udp.payload[31:0] (deparsed)
+  32-bit PHV 3 (ingress): phv3[31:29] = ig_md.lemon.l1_slot[18:16]
+  32-bit PHV 3 (ingress): phv3[28:16] = ig_md.lemon.c_slot[12:0]
+  32-bit PHV 3 (ingress): phv3[15:0] = ig_md.lemon.shash[15:0]
+  32-bit PHV 4 (ingress): phv4[29:20] = ig_md.lemon.l4_slot[14:5]
+  32-bit PHV 4 (ingress): phv4[19:10] = ig_md.lemon.l2_slot[14:5]
+  32-bit PHV 4 (ingress): phv4[9:0] = ig_md.lemon.heavy_slot[9:0]
+  32-bit PHV 5 (ingress): phv5[29:20] = ig_md.lemon.l5_slot[18:9]
+  32-bit PHV 5 (ingress): phv5[19:10] = ig_md.lemon.l3_slot[14:5]
+  32-bit PHV 5 (ingress): phv5[9:0] = ig_md.lemon.l1_slot[12:3]
+  32-bit PHV 6 (ingress): phv6[26:11] = ig_md.lemon.l4_slot[31:16]
+  32-bit PHV 6 (ingress): phv6[10:6] = ig_md.lemon.l4_slot[4:0]
+  32-bit PHV 6 (ingress): phv6[5:3] = ig_md.lemon.l2_slot[2:0]
+  32-bit PHV 6 (ingress): phv6[2:2] = ig_md.lemon.l4_slot[15:15]
+  32-bit PHV 6 (ingress): phv6[1:1] = ig_md.lemon.l2_slot[15:15]
+  32-bit PHV 6 (ingress): phv6[0:0] = ig_md.lemon.heavy_slot[10:10]
+  32-bit PHV 7 (ingress): phv7[28:10] = ig_md.lemon.heavy_slot[31:13]
+  32-bit PHV 7 (ingress): phv7[9:7] = ig_md.lemon.l5_slot[2:0]
+  32-bit PHV 7 (ingress): phv7[6:2] = ig_md.lemon.l2_slot[20:16]
+  32-bit PHV 7 (ingress): phv7[1:1] = ig_md.lemon.l3_slot[15:15]
+  32-bit PHV 7 (ingress): phv7[0:0] = ig_md.lemon.l1_slot[13:13]
+  32-bit PHV 8 (ingress): phv8[25:11] = ig_md.lemon.c_slot[31:17]
+  32-bit PHV 8 (ingress): phv8[10:9] = ig_md.lemon.l5_slot[4:3]
+  32-bit PHV 8 (ingress): phv8[8:7] = ig_md.lemon.l3_slot[4:3]
+  32-bit PHV 8 (ingress): phv8[6:4] = ig_md.lemon.l1_slot[2:0]
+  32-bit PHV 8 (ingress): phv8[3:2] = ig_md.lemon.l3_slot[17:16]
+  32-bit PHV 8 (ingress): phv8[1:0] = ig_md.lemon.heavy_slot[12:11]
+  32-bit PHV 9 (ingress): phv9[27:14] = ig_md.lemon.l3_slot[31:18]
+  32-bit PHV 9 (ingress): phv9[13:10] = ig_md.lemon.l5_slot[8:5]
+  32-bit PHV 9 (ingress): phv9[9:8] = ig_md.lemon.l2_slot[4:3]
+  32-bit PHV 9 (ingress): phv9[7:5] = ig_md.lemon.l3_slot[2:0]
+  32-bit PHV 9 (ingress): phv9[4:2] = ig_md.lemon.c_slot[15:13]
+  32-bit PHV 9 (ingress): phv9[1:0] = ig_md.lemon.l1_slot[15:14]
+  32-bit PHV 10 (ingress): phv10[28:16] = ig_md.lemon.l5_slot[31:19]
+  32-bit PHV 10 (ingress): phv10[15:0] = ig_md.lemon.bhash[15:0]
+  >> 11 in ingress and 0 in egress
+
+Allocations in Group 4 8 bits
+  8-bit PHV 64 (ingress): phv64[6:4] = ig_md.lemon.l2_slot[31:29]
+  8-bit PHV 64 (ingress): phv64[3:2] = ig_md.lemon.l1_slot[21:20]
+  8-bit PHV 64 (ingress): phv64[1:1] = ig_md.lemon.c_slot[16:16]
+  8-bit PHV 64 (ingress): phv64[0:0] = ig_intr_md_for_tm.bypass_egress[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[7:7] = ig_md.lemon.l1_slot[19:19]
+  8-bit PHV 65 (ingress): phv65[6:6] = hdr.vlan_tag.$valid[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[5:5] = hdr.arp.$valid[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[4:4] = hdr.icmp.$valid[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[3:3] = hdr.udp.$valid[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[2:2] = hdr.tcp.$valid[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[1:1] = hdr.ipv4.$valid[0:0] (deparsed)
+  8-bit PHV 65 (ingress): phv65[0:0] = hdr.ethernet.$valid[0:0] (deparsed)
+  8-bit PHV 66 (ingress): phv66[7:0] = ig_md.lemon.shash[23:16]
+  8-bit PHV 67 (ingress): phv67[7:0] = ig_md.lemon.shash[31:24]
+  8-bit PHV 68 (ingress): phv68[7:0] = ig_md.lemon.l2_slot[28:21]
+  8-bit PHV 69 (ingress): phv69[7:0] = ig_md.lemon.l1_slot[29:22]
+  8-bit PHV 70 (ingress): phv70[7:0] = ig_md.lemon.tag[7:0]
+  >> 7 in ingress and 0 in egress
+
+Allocations in Group 8 16 bits
+  16-bit PHV 128 (ingress): phv128[8:0] = ig_intr_md_for_tm.ucast_egress_port[8:0] (deparsed)
+  16-bit PHV 129 (ingress): phv129[15:0] = hdr.tcp.checksum[15:0] (deparsed)
+  16-bit PHV 129 (ingress): phv129[15:0] = hdr.udp.checksum[15:0] (deparsed)
+  16-bit PHV 130 (ingress): phv130[10:9] = ig_md.lemon.l1_slot[31:30]
+  16-bit PHV 130 (ingress): phv130[8:0] = ig_intr_md.ingress_port[8:0]
+  16-bit PHV 131 (ingress): phv131[15:0] = ig_md.lemon.dhash[15:0]
+  >> 4 in ingress and 0 in egress
+
+Allocations in Group 14 32 bits (tagalong)
+  32-bit PHV 256 (ingress): phv256[31:28] = hdr.ipv4.version[3:0] (tagalong capable) (deparsed)
+  32-bit PHV 256 (ingress): phv256[31:24] = hdr.arp.hw_addr_len[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 256 (ingress): phv256[27:24] = hdr.ipv4.ihl[3:0] (tagalong capable) (deparsed)
+  32-bit PHV 256 (ingress): phv256[23:16] = hdr.ipv4.diffserv[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 256 (ingress): phv256[23:16] = hdr.arp.proto_addr_len[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 256 (ingress): phv256[15:0] = hdr.ipv4.total_len[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 256 (ingress): phv256[15:0] = hdr.arp.opcode[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[31:28] = hdr.tcp.data_offset[3:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[31:16] = hdr.udp.src_port[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[31:24] = hdr.icmp.type_[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[31:16] = hdr.arp.hw_type[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[27:24] = hdr.tcp.res[3:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[23:16] = hdr.tcp.flags[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[23:16] = hdr.icmp.code[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[15:0] = hdr.tcp.window[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[15:0] = hdr.udp.dst_port[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[15:0] = hdr.icmp.hdr_checksum[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 257 (ingress): phv257[15:0] = hdr.arp.proto_type[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 258 (ingress): phv258[31:29] = hdr.vlan_tag.pcp[2:0] (tagalong capable) (deparsed)
+  32-bit PHV 258 (ingress): phv258[28:28] = hdr.vlan_tag.cfi[0:0] (tagalong capable) (deparsed)
+  32-bit PHV 258 (ingress): phv258[27:16] = hdr.vlan_tag.vid[11:0] (tagalong capable) (deparsed)
+  32-bit PHV 258 (ingress): phv258[15:0] = hdr.vlan_tag.ether_type[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 259 (ingress): phv259[31:24] = hdr.ipv4.ttl[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 259 (ingress): phv259[23:16] = hdr.ipv4.protocol[7:0] (tagalong capable) (deparsed)
+  32-bit PHV 259 (ingress): phv259[15:0] = hdr.ipv4.hdr_checksum[15:0] (tagalong capable) (deparsed)
+  32-bit PHV 260 (ingress): phv260[31:0] = hdr.ethernet.dst_addr[31:0] (tagalong capable) (deparsed)
+  32-bit PHV 261 (ingress): phv261[31:0] = hdr.tcp.ack_no[31:0] (tagalong capable) (deparsed)
+  >> 6 in ingress and 0 in egress
+
+Allocations in Group 16 8 bits (tagalong)
+  8-bit PHV 288 (ingress): phv288[7:0] = hdr.ethernet.src_addr[23:16] (tagalong capable) (deparsed)
+  8-bit PHV 289 (ingress): phv289[7:0] = hdr.ethernet.src_addr[31:24] (tagalong capable) (deparsed)
+  >> 2 in ingress and 0 in egress
+
+Allocations in Group 18 16 bits (tagalong)
+  16-bit PHV 320 (ingress): phv320[15:13] = hdr.ipv4.flags[2:0] (tagalong capable) (deparsed)
+  16-bit PHV 320 (ingress): phv320[12:0] = hdr.ipv4.frag_offset[12:0] (tagalong capable) (deparsed)
+  16-bit PHV 321 (ingress): phv321[15:0] = hdr.ipv4.identification[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 322 (ingress): phv322[15:0] = hdr.tcp.urgent_ptr[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 322 (ingress): phv322[15:0] = hdr.udp.hdr_length[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 323 (ingress): phv323[15:0] = hdr.tcp.dst_port[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 324 (ingress): phv324[15:0] = hdr.tcp.src_port[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 325 (ingress): phv325[15:0] = hdr.ethernet.src_addr[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 326 (ingress): phv326[15:0] = hdr.ethernet.ether_type[15:0] (tagalong capable) (deparsed)
+  16-bit PHV 327 (ingress): phv327[15:0] = hdr.ethernet.src_addr[47:32] (tagalong capable) (deparsed)
+  16-bit PHV 328 (ingress): phv328[15:0] = hdr.ethernet.dst_addr[47:32] (tagalong capable) (deparsed)
+  >> 9 in ingress and 0 in egress
+
+
+Final POV layout (ingress):
+
+Final POV layout (egress):

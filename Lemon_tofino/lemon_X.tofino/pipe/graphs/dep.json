@@ -1,0 +1,7240 @@
+{
+  "graphs" : [
+    {
+      "metadata" : {
+        "gress" : "ingress",
+        "description" : "Before Table Placement Round 1",
+        "placement_complete" : false
+      },
+      "nodes" : [
+        {
+          "id" : "0",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-8",
+                "table_type" : "condition",
+                "condition" : "ig_intr_md.ingress_port == 142"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "1",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X284",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "2",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-9",
+                "table_type" : "condition",
+                "condition" : "ig_intr_md.ingress_port == 141"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "3",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X288",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "4",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-10",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 1"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "5",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X321",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "6",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-11",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 2"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "7",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X324",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer2",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "8",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-12",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 3"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "9",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X327",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer3",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "10",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-13",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 4"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "11",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X330",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer4",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "12",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-14",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 5"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "13",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X333",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer5",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 3,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "14",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X334",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Heavy_sip",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "15",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash1",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "16",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash2",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "17",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash3",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 3
+          }
+        },
+        {
+          "id" : "18",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X299",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "19",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X303",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "20",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X306",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "21",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X309",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "22",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X312",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "23",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X315",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.counter_1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "24",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SwitchIngress.lemon_match",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "25",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SINK",
+                "table_type" : "condition",
+                "condition" : "<null>"
+              }
+            ],
+            "min_stage" : -1,
+            "dep_chain" : -1
+          }
+        }
+      ],
+      "edges" : [
+        {
+          "id" : "0",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "1",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "2",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "3",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "4",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "5",
+          "source" : "10",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "6",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "7",
+          "source" : "12",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "8",
+          "source" : "1",
+          "target" : "3",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "output",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "9",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "10",
+          "source" : "16",
+          "target" : "19",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "11",
+          "source" : "17",
+          "target" : "19",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "12",
+          "source" : "16",
+          "target" : "20",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "13",
+          "source" : "17",
+          "target" : "20",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "14",
+          "source" : "16",
+          "target" : "21",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "15",
+          "source" : "17",
+          "target" : "21",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "16",
+          "source" : "16",
+          "target" : "22",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "17",
+          "source" : "17",
+          "target" : "22",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "18",
+          "source" : "16",
+          "target" : "23",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "19",
+          "source" : "18",
+          "target" : "23",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "20",
+          "source" : "15",
+          "target" : "24",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "21",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "22",
+          "source" : "18",
+          "target" : "5",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "23",
+          "source" : "19",
+          "target" : "5",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "24",
+          "source" : "24",
+          "target" : "6",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "25",
+          "source" : "19",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "26",
+          "source" : "20",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "27",
+          "source" : "24",
+          "target" : "8",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "28",
+          "source" : "20",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "29",
+          "source" : "21",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "30",
+          "source" : "24",
+          "target" : "10",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "31",
+          "source" : "21",
+          "target" : "11",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "32",
+          "source" : "22",
+          "target" : "11",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "33",
+          "source" : "24",
+          "target" : "12",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "34",
+          "source" : "22",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "35",
+          "source" : "23",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "36",
+          "source" : "18",
+          "target" : "14",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "37",
+          "source" : "23",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "38",
+          "source" : "18",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "39",
+          "source" : "18",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "40",
+          "source" : "18",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "41",
+          "source" : "19",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "42",
+          "source" : "19",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "43",
+          "source" : "20",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "44",
+          "source" : "20",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "45",
+          "source" : "21",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "46",
+          "source" : "21",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "47",
+          "source" : "22",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "48",
+          "source" : "22",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "49",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "50",
+          "source" : "24",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "51",
+          "source" : "24",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "52",
+          "source" : "24",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "53",
+          "source" : "24",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "54",
+          "source" : "1",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "55",
+          "source" : "15",
+          "target" : "24",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "56",
+          "source" : "16",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "57",
+          "source" : "16",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "58",
+          "source" : "16",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "59",
+          "source" : "16",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "60",
+          "source" : "16",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "61",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "62",
+          "source" : "17",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "63",
+          "source" : "17",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "64",
+          "source" : "17",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "65",
+          "source" : "17",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "66",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "67",
+          "source" : "0",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "68",
+          "source" : "1",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "69",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "70",
+          "source" : "2",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "71",
+          "source" : "3",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "72",
+          "source" : "15",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "73",
+          "source" : "16",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "74",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "75",
+          "source" : "18",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "76",
+          "source" : "19",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "77",
+          "source" : "20",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "78",
+          "source" : "21",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "79",
+          "source" : "22",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "80",
+          "source" : "23",
+          "target" : "24",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "81",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "82",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "83",
+          "source" : "4",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "84",
+          "source" : "5",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "85",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "86",
+          "source" : "6",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "87",
+          "source" : "7",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "88",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "89",
+          "source" : "8",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "90",
+          "source" : "9",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "91",
+          "source" : "10",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "92",
+          "source" : "10",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "93",
+          "source" : "11",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "94",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "95",
+          "source" : "12",
+          "target" : "25",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "96",
+          "source" : "13",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "97",
+          "source" : "14",
+          "target" : "25",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        }
+      ]
+    },
+    {
+      "metadata" : {
+        "gress" : "ingress",
+        "description" : "Before Table Placement Round 2",
+        "placement_complete" : false
+      },
+      "nodes" : [
+        {
+          "id" : "0",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-8",
+                "table_type" : "condition",
+                "condition" : "ig_intr_md.ingress_port == 142"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "1",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X284",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "2",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-9",
+                "table_type" : "condition",
+                "condition" : "ig_intr_md.ingress_port == 141"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "3",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X288",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "4",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-10",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 1"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "5",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X321",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "6",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-11",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 2"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "7",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X324",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer2",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "8",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-12",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 3"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "9",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X327",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer3",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "10",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-13",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 4"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "11",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X330",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer4",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "12",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-14",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 5"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "13",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X333",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer5",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 3,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "14",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X334",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Heavy_sip",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "15",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash1",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "16",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash2",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "17",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash3",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 3
+          }
+        },
+        {
+          "id" : "18",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X299",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "19",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X303",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "20",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X306",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "21",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X309",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "22",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X312",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "23",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X315",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.counter_1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "24",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SwitchIngress.lemon_match",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "25",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SINK",
+                "table_type" : "condition",
+                "condition" : "<null>"
+              }
+            ],
+            "min_stage" : -1,
+            "dep_chain" : -1
+          }
+        }
+      ],
+      "edges" : [
+        {
+          "id" : "0",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "1",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "2",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "3",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "4",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "5",
+          "source" : "10",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "6",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "7",
+          "source" : "12",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "8",
+          "source" : "1",
+          "target" : "3",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "output",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "9",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "10",
+          "source" : "16",
+          "target" : "19",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "11",
+          "source" : "17",
+          "target" : "19",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "12",
+          "source" : "16",
+          "target" : "20",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "13",
+          "source" : "17",
+          "target" : "20",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "14",
+          "source" : "16",
+          "target" : "21",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "15",
+          "source" : "17",
+          "target" : "21",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "16",
+          "source" : "16",
+          "target" : "22",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "17",
+          "source" : "17",
+          "target" : "22",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "18",
+          "source" : "16",
+          "target" : "23",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "19",
+          "source" : "18",
+          "target" : "23",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "20",
+          "source" : "15",
+          "target" : "24",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "21",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "22",
+          "source" : "18",
+          "target" : "5",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "23",
+          "source" : "19",
+          "target" : "5",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "24",
+          "source" : "24",
+          "target" : "6",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "25",
+          "source" : "19",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "26",
+          "source" : "20",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "27",
+          "source" : "24",
+          "target" : "8",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "28",
+          "source" : "20",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "29",
+          "source" : "21",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "30",
+          "source" : "24",
+          "target" : "10",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "31",
+          "source" : "21",
+          "target" : "11",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "32",
+          "source" : "22",
+          "target" : "11",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "33",
+          "source" : "24",
+          "target" : "12",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "34",
+          "source" : "22",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "35",
+          "source" : "23",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "36",
+          "source" : "18",
+          "target" : "14",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "37",
+          "source" : "23",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "38",
+          "source" : "18",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "39",
+          "source" : "18",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "40",
+          "source" : "18",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "41",
+          "source" : "19",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "42",
+          "source" : "19",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "43",
+          "source" : "20",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "44",
+          "source" : "20",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "45",
+          "source" : "21",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "46",
+          "source" : "21",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "47",
+          "source" : "22",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "48",
+          "source" : "22",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "49",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "50",
+          "source" : "24",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "51",
+          "source" : "24",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "52",
+          "source" : "24",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "53",
+          "source" : "24",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "54",
+          "source" : "1",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "55",
+          "source" : "15",
+          "target" : "24",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "56",
+          "source" : "16",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "57",
+          "source" : "16",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "58",
+          "source" : "16",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "59",
+          "source" : "16",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "60",
+          "source" : "16",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "61",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "62",
+          "source" : "17",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "63",
+          "source" : "17",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "64",
+          "source" : "17",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "65",
+          "source" : "17",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "66",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "67",
+          "source" : "0",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "68",
+          "source" : "1",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "69",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "70",
+          "source" : "2",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "71",
+          "source" : "3",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "72",
+          "source" : "15",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "73",
+          "source" : "16",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "74",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "75",
+          "source" : "18",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "76",
+          "source" : "19",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "77",
+          "source" : "20",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "78",
+          "source" : "21",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "79",
+          "source" : "22",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "80",
+          "source" : "23",
+          "target" : "24",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "81",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "82",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "83",
+          "source" : "4",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "84",
+          "source" : "5",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "85",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "86",
+          "source" : "6",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "87",
+          "source" : "7",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "88",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "89",
+          "source" : "8",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "90",
+          "source" : "9",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "91",
+          "source" : "10",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "92",
+          "source" : "10",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "93",
+          "source" : "11",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "94",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "95",
+          "source" : "12",
+          "target" : "25",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "96",
+          "source" : "13",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "97",
+          "source" : "14",
+          "target" : "25",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        }
+      ]
+    },
+    {
+      "metadata" : {
+        "gress" : "ingress",
+        "description" : "Before Table Placement Round 3",
+        "placement_complete" : false
+      },
+      "nodes" : [
+        {
+          "id" : "0",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-8",
+                "table_type" : "condition",
+                "condition" : "ig_intr_md.ingress_port == 142"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "1",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X284",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "2",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-9",
+                "table_type" : "condition",
+                "condition" : "ig_intr_md.ingress_port == 141"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "3",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X288",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "4",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-10",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 1"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "5",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X321",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "6",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-11",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 2"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "7",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X324",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer2",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "8",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-12",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 3"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "9",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X327",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer3",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "10",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-13",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 4"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "11",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X330",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer4",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "12",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "cond-14",
+                "table_type" : "condition",
+                "condition" : "ig_md.lemon.tag == 5"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "13",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X333",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer5",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 3,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "14",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X334",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Heavy_sip",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "15",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash1",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "16",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash2",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "17",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash3",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 3
+          }
+        },
+        {
+          "id" : "18",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X299",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "19",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X303",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "20",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X306",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "21",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X309",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "22",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X312",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "23",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X315",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.counter_1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "24",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SwitchIngress.lemon_match",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "25",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SINK",
+                "table_type" : "condition",
+                "condition" : "<null>"
+              }
+            ],
+            "min_stage" : -1,
+            "dep_chain" : -1
+          }
+        }
+      ],
+      "edges" : [
+        {
+          "id" : "0",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "1",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "2",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "3",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "4",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "5",
+          "source" : "10",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "6",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "7",
+          "source" : "12",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "8",
+          "source" : "1",
+          "target" : "3",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "output",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "9",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "10",
+          "source" : "16",
+          "target" : "19",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "11",
+          "source" : "17",
+          "target" : "19",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "12",
+          "source" : "16",
+          "target" : "20",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "13",
+          "source" : "17",
+          "target" : "20",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "14",
+          "source" : "16",
+          "target" : "21",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "15",
+          "source" : "17",
+          "target" : "21",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "16",
+          "source" : "16",
+          "target" : "22",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "17",
+          "source" : "17",
+          "target" : "22",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "18",
+          "source" : "16",
+          "target" : "23",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "19",
+          "source" : "18",
+          "target" : "23",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "20",
+          "source" : "15",
+          "target" : "24",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "21",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "22",
+          "source" : "18",
+          "target" : "5",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "23",
+          "source" : "19",
+          "target" : "5",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "24",
+          "source" : "24",
+          "target" : "6",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "25",
+          "source" : "19",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "26",
+          "source" : "20",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "27",
+          "source" : "24",
+          "target" : "8",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "28",
+          "source" : "20",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "29",
+          "source" : "21",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "30",
+          "source" : "24",
+          "target" : "10",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "31",
+          "source" : "21",
+          "target" : "11",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "32",
+          "source" : "22",
+          "target" : "11",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "33",
+          "source" : "24",
+          "target" : "12",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "34",
+          "source" : "22",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "35",
+          "source" : "23",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "36",
+          "source" : "18",
+          "target" : "14",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "37",
+          "source" : "23",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "38",
+          "source" : "18",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "39",
+          "source" : "18",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "40",
+          "source" : "18",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "41",
+          "source" : "19",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "42",
+          "source" : "19",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "43",
+          "source" : "20",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "44",
+          "source" : "20",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "45",
+          "source" : "21",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "46",
+          "source" : "21",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "47",
+          "source" : "22",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "48",
+          "source" : "22",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "49",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "50",
+          "source" : "24",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "51",
+          "source" : "24",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "52",
+          "source" : "24",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "53",
+          "source" : "24",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "54",
+          "source" : "1",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "55",
+          "source" : "15",
+          "target" : "24",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "56",
+          "source" : "16",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "57",
+          "source" : "16",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "58",
+          "source" : "16",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "59",
+          "source" : "16",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "60",
+          "source" : "16",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "61",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "62",
+          "source" : "17",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "63",
+          "source" : "17",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "64",
+          "source" : "17",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "65",
+          "source" : "17",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "66",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "67",
+          "source" : "0",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "68",
+          "source" : "1",
+          "target" : "2",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "69",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "70",
+          "source" : "2",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "71",
+          "source" : "3",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "72",
+          "source" : "15",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "73",
+          "source" : "16",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "74",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "75",
+          "source" : "18",
+          "target" : "19",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "76",
+          "source" : "19",
+          "target" : "20",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "77",
+          "source" : "20",
+          "target" : "21",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "78",
+          "source" : "21",
+          "target" : "22",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "79",
+          "source" : "22",
+          "target" : "23",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "80",
+          "source" : "23",
+          "target" : "24",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "81",
+          "source" : "24",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "82",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "83",
+          "source" : "4",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "84",
+          "source" : "5",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "85",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "86",
+          "source" : "6",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "87",
+          "source" : "7",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "88",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "89",
+          "source" : "8",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "90",
+          "source" : "9",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "91",
+          "source" : "10",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "92",
+          "source" : "10",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "93",
+          "source" : "11",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "94",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : true,
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "95",
+          "source" : "12",
+          "target" : "25",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "96",
+          "source" : "13",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "97",
+          "source" : "14",
+          "target" : "25",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        }
+      ]
+    },
+    {
+      "metadata" : {
+        "gress" : "ingress",
+        "description" : "After Table Placement Round 3",
+        "placement_complete" : true
+      },
+      "nodes" : [
+        {
+          "id" : "0",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 3,
+              "stage_number" : 2
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X334",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Heavy_sip",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "1",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 3
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X333",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer5",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 3,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "2",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 0
+            },
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash3",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 3
+          }
+        },
+        {
+          "id" : "3",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 1,
+              "stage_number" : 0
+            },
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash2",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "4",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 2,
+              "stage_number" : 0
+            },
+            "tables" : [
+              {
+                "name" : "tbl_compute_hash1",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "5",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 3,
+              "stage_number" : 0
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X284",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X284$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 0,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "6",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 1
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X299",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X299$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 2
+          }
+        },
+        {
+          "id" : "7",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 1,
+              "stage_number" : 1
+            },
+            "tables" : [
+              {
+                "name" : "SwitchIngress.lemon_match",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "lemon_match_0$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "8",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 2
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X312",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X312$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "9",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 1,
+              "stage_number" : 2
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X315",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.counter_1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "10",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 2,
+              "stage_number" : 2
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X288",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X288$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "11",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 1,
+              "stage_number" : 3
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X309",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X309$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "12",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 4
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X306",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X306$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "13",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 1,
+              "stage_number" : 4
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X330",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer4",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "14",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 5
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X303",
+                "table_type" : "match",
+                "match_type" : "ternary"
+              },
+              {
+                "name" : "tbl_lemon_X303$tind",
+                "table_type" : "ternary_indirect"
+              }
+            ],
+            "min_stage" : 1,
+            "dep_chain" : 1
+          }
+        },
+        {
+          "id" : "15",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 1,
+              "stage_number" : 5
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X327",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer3",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "16",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 6
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X324",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer2",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "17",
+          "metadata" : {
+            "placement" : {
+              "logical_table_id" : 0,
+              "stage_number" : 7
+            },
+            "tables" : [
+              {
+                "name" : "tbl_lemon_X321",
+                "table_type" : "match",
+                "match_type" : "hash_action"
+              },
+              {
+                "name" : "SwitchIngress.Layer1",
+                "table_type" : "stateful"
+              }
+            ],
+            "min_stage" : 2,
+            "dep_chain" : 0
+          }
+        },
+        {
+          "id" : "18",
+          "metadata" : {
+            "tables" : [
+              {
+                "name" : "SINK",
+                "table_type" : "condition",
+                "condition" : "<null>"
+              }
+            ],
+            "min_stage" : -1,
+            "dep_chain" : -1
+          }
+        }
+      ],
+      "edges" : [
+        {
+          "id" : "0",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "1",
+          "source" : "2",
+          "target" : "6",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "2",
+          "source" : "4",
+          "target" : "7",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "3",
+          "source" : "3",
+          "target" : "8",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "4",
+          "source" : "2",
+          "target" : "8",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "5",
+          "source" : "3",
+          "target" : "9",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "6",
+          "source" : "6",
+          "target" : "9",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "7",
+          "source" : "5",
+          "target" : "10",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "output",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "8",
+          "source" : "7",
+          "target" : "0",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "9",
+          "source" : "6",
+          "target" : "0",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "10",
+          "source" : "8",
+          "target" : "1",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "11",
+          "source" : "9",
+          "target" : "1",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "12",
+          "source" : "3",
+          "target" : "11",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "13",
+          "source" : "2",
+          "target" : "11",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "14",
+          "source" : "3",
+          "target" : "12",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "15",
+          "source" : "2",
+          "target" : "12",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "16",
+          "source" : "7",
+          "target" : "13",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "17",
+          "source" : "11",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "18",
+          "source" : "8",
+          "target" : "13",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "19",
+          "source" : "3",
+          "target" : "14",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "20",
+          "source" : "2",
+          "target" : "14",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "21",
+          "source" : "7",
+          "target" : "15",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "22",
+          "source" : "12",
+          "target" : "15",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "23",
+          "source" : "11",
+          "target" : "15",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "24",
+          "source" : "7",
+          "target" : "16",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "25",
+          "source" : "14",
+          "target" : "16",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "26",
+          "source" : "12",
+          "target" : "16",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "27",
+          "source" : "7",
+          "target" : "17",
+          "metadata" : {
+            "type" : "action",
+            "sub_type" : "action_read",
+            "dep_fields" : [],
+            "action_name" : "",
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "28",
+          "source" : "6",
+          "target" : "17",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "29",
+          "source" : "14",
+          "target" : "17",
+          "metadata" : {
+            "type" : "match",
+            "sub_type" : "ixbar_read",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "30",
+          "source" : "9",
+          "target" : "0",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "is_critical" : true,
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "31",
+          "source" : "6",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.c_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "32",
+          "source" : "6",
+          "target" : "0",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.heavy_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "33",
+          "source" : "6",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "34",
+          "source" : "7",
+          "target" : "0",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "35",
+          "source" : "7",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "36",
+          "source" : "7",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "37",
+          "source" : "7",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "38",
+          "source" : "7",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.tag",
+                "start_bit" : 0,
+                "width" : 8
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "39",
+          "source" : "8",
+          "target" : "0",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l5_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "40",
+          "source" : "8",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "41",
+          "source" : "11",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l4_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "42",
+          "source" : "11",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "43",
+          "source" : "12",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l3_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "44",
+          "source" : "12",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "45",
+          "source" : "14",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l2_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "46",
+          "source" : "14",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.l1_slot",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "47",
+          "source" : "2",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "48",
+          "source" : "2",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "49",
+          "source" : "2",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "50",
+          "source" : "2",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "51",
+          "source" : "2",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.shash",
+                "start_bit" : 0,
+                "width" : 32
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "52",
+          "source" : "3",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "53",
+          "source" : "3",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "54",
+          "source" : "3",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "55",
+          "source" : "3",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "56",
+          "source" : "3",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.bhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "57",
+          "source" : "4",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_md.lemon.dhash",
+                "start_bit" : 0,
+                "width" : 16
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "58",
+          "source" : "5",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "anti",
+            "anti_type" : "next_table_data",
+            "dep_fields" : [
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.ucast_egress_port",
+                "start_bit" : 0,
+                "width" : 9
+              },
+              {
+                "gress" : "ingress",
+                "field_name" : "ig_intr_md_for_tm.bypass_egress",
+                "start_bit" : 0,
+                "width" : 1
+              }
+            ],
+            "tags" : ["dependency"]
+          }
+        },
+        {
+          "id" : "59",
+          "source" : "2",
+          "target" : "3",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "60",
+          "source" : "3",
+          "target" : "4",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "61",
+          "source" : "4",
+          "target" : "5",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "62",
+          "source" : "5",
+          "target" : "6",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "63",
+          "source" : "6",
+          "target" : "7",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "64",
+          "source" : "7",
+          "target" : "8",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "65",
+          "source" : "8",
+          "target" : "9",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "66",
+          "source" : "9",
+          "target" : "10",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "67",
+          "source" : "10",
+          "target" : "0",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "68",
+          "source" : "0",
+          "target" : "1",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "is_critical" : true,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "69",
+          "source" : "0",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "70",
+          "source" : "1",
+          "target" : "11",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "71",
+          "source" : "11",
+          "target" : "12",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "72",
+          "source" : "12",
+          "target" : "13",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "73",
+          "source" : "13",
+          "target" : "14",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "74",
+          "source" : "14",
+          "target" : "15",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "default_next_table",
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "75",
+          "source" : "15",
+          "target" : "16",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "76",
+          "source" : "16",
+          "target" : "17",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        },
+        {
+          "id" : "77",
+          "source" : "17",
+          "target" : "18",
+          "metadata" : {
+            "type" : "control",
+            "sub_type" : "condition",
+            "condition_value" : false,
+            "tags" : ["flow"]
+          }
+        }
+      ]
+    }
+  ],
+  "schema_version" : "1.0.1"
+}

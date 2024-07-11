@@ -1,0 +1,32 @@
+digraph parser {
+size="8,5"
+State0x952aa80 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{TofinoIngressParser_parse_resubmit}"];
+State0x9acf000 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{parse_tcp}"];
+State0x9aeba80 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{parse_arp}"];
+State0x9aebc40 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{parse_icmp}"];
+State0x9aebe00 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{parse_udp}"];
+State0x1bc01380 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{start}"];
+State0x1bc01540 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{\$entry_point}"];
+State0x1d660700 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{parse_ipv4}"];
+State0x1d660a80 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{TofinoIngressParser_parse_port_metadata}"];
+State0x1d68f540 [shape=record, style="filled,rounded", fillcolor=cornsilk, label="{parse_vlan}"];
+State0x1bc01540 -> State0x1bc01380 [  ]
+State0x1bc01380 -> State0x952aa80 [  ]
+State0x1bc01380 -> State0x1d660a80 [  ]
+State0x1d660a80 -> State0x1d660700 [  ]
+State0x1d660a80 -> State0x9aeba80 [  ]
+State0x1d660a80 -> State0x1d68f540 [  ]
+State0x1d660700 -> State0x9acf000 [  ]
+State0x1d660700 -> State0x9aebe00 [  ]
+State0x1d660700 -> State0x9aebc40 [  ]
+State0x1d68f540 -> State0x1d660700 [  ]
+State0x1d68f540 -> State0x9aeba80 [  ]
+State0x952aa80 -> ingress_pipe [  ]
+State0x9acf000 -> ingress_pipe [  ]
+State0x9aeba80 -> ingress_pipe [  ]
+State0x9aebc40 -> ingress_pipe [  ]
+State0x9aebe00 -> ingress_pipe [  ]
+State0x1d660700 -> ingress_pipe [  ]
+State0x1d660a80 -> ingress_pipe [  ]
+State0x1d68f540 -> ingress_pipe [  ]
+}

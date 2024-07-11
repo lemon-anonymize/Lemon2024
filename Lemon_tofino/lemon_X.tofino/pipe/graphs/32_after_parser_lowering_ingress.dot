@@ -1,0 +1,84 @@
+digraph parser {
+size="8,5"
+subgraph cluster_0 {style=invis;
+State0x7f25000 [style=filled, fillcolor=lightskyblue1, shape=record, label="{parse_arp:\l\l}"];
+Match0x372932a0 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: *: \l\l}"];
+}
+subgraph cluster_1 {style=invis;
+State0x7f25380 [style=filled, fillcolor=lightskyblue1, shape=record, label="{parse_ipv4:\l\l}"];
+Match0x37293d20 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x06: \l\l}"];
+Match0x37293a80 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x11: \l\l}"];
+Match0x372937e0 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x01: \l\l}"];
+Match0x37293540 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x**: \l\l}"];
+}
+subgraph cluster_2 {style=invis;
+State0x7f25460 [style=filled, fillcolor=lightskyblue1, shape=record, label="{parse_icmp:\l\l}"];
+Match0x375ae000 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: *: \l\l}"];
+}
+subgraph cluster_3 {style=invis;
+State0x7f258c0 [style=filled, fillcolor=lightskyblue1, shape=record, label="{parse_udp:\l\l}"];
+Match0x375ae2a0 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: *: \l\l}"];
+}
+subgraph cluster_4 {style=invis;
+State0x7f259a0 [style=filled, fillcolor=lightskyblue1, shape=record, label="{parse_tcp:\l\l}"];
+Match0x375ae540 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: *: \l\l}"];
+}
+subgraph cluster_5 {style=invis;
+State0x7f508c0 [style=filled, fillcolor=lightskyblue1, shape=record, label="{\$entry_point:\l\l}"];
+Match0x372ac7e0 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: *: \l\l}"];
+}
+subgraph cluster_6 {style=invis;
+State0x7f509a0 [style=filled, fillcolor=lightskyblue1, shape=record, label="{start:\l\l}"];
+Match0x372acd20 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0b1*******: \l\l}"];
+Match0x372aca80 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0b0*******: \l\l}"];
+}
+subgraph cluster_7 {style=invis;
+State0x7f50d20 [style=filled, fillcolor=lightskyblue1, shape=record, label="{TofinoIngressParser_parse_port_metadata:\l\l}"];
+Match0x372967e0 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x0800: \l\l}"];
+Match0x37296540 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x0806: \l\l}"];
+Match0x372962a0 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x8100: \l\l}"];
+Match0x37296000 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x****: \l\l}"];
+}
+subgraph cluster_8 {style=invis;
+State0x7f50e00 [style=filled, fillcolor=lightskyblue1, shape=record, label="{parse_vlan:\l\l}"];
+Match0x37293000 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x0800: \l\l}"];
+Match0x37296d20 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x0806: \l\l}"];
+Match0x37296a80 [style=filled, fillcolor=aliceblue, shape=record, label="{match const: 0x****: \l\l}"];
+}
+State0x7f25000 -> Match0x372932a0
+Match0x372932a0 -> ingress_pipe
+State0x7f25380 -> Match0x37293d20
+Match0x37293d20 -> State0x7f259a0
+State0x7f25380 -> Match0x37293a80
+Match0x37293a80 -> State0x7f258c0
+State0x7f25380 -> Match0x372937e0
+Match0x372937e0 -> State0x7f25460
+State0x7f25380 -> Match0x37293540
+Match0x37293540 -> ingress_pipe
+State0x7f25460 -> Match0x375ae000
+Match0x375ae000 -> ingress_pipe
+State0x7f258c0 -> Match0x375ae2a0
+Match0x375ae2a0 -> ingress_pipe
+State0x7f259a0 -> Match0x375ae540
+Match0x375ae540 -> ingress_pipe
+State0x7f508c0 -> Match0x372ac7e0
+Match0x372ac7e0 -> State0x7f509a0
+State0x7f509a0 -> Match0x372acd20
+Match0x372acd20 -> ingress_pipe
+State0x7f509a0 -> Match0x372aca80
+Match0x372aca80 -> State0x7f50d20
+State0x7f50d20 -> Match0x372967e0
+Match0x372967e0 -> State0x7f25380
+State0x7f50d20 -> Match0x37296540
+Match0x37296540 -> State0x7f25000
+State0x7f50d20 -> Match0x372962a0
+Match0x372962a0 -> State0x7f50e00
+State0x7f50d20 -> Match0x37296000
+Match0x37296000 -> ingress_pipe
+State0x7f50e00 -> Match0x37293000
+Match0x37293000 -> State0x7f25380
+State0x7f50e00 -> Match0x37296d20
+Match0x37296d20 -> State0x7f25000
+State0x7f50e00 -> Match0x37296a80
+Match0x37296a80 -> ingress_pipe
+}
