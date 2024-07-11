@@ -2,8 +2,6 @@
 #include <core.p4>
 #include <v1model.p4>
 
-#define HASH_THRESHOLD 1288490189  //threshold=0.3 for kmv hash，Replace floating with integer in the range 0 to 4294967295 （32 bits）
-#define BLOOM_SIZE 262144
 #define PKT_INSTANCE_TYPE_NORMAL 0
 #define PKT_INSTANCE_TYPE_INGRESS_CLONE 1
 #define PKT_INSTANCE_TYPE_EGRESS_CLONE 2
