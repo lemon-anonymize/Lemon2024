@@ -236,6 +236,15 @@ control MyIngress(inout headers hdr,
     register<bit<32>>(8192) lemon_heavy_id;
 
     register<bit<32>>(8192) lemon_heavy_tag;
+
+
+    register<bit<32>>(2) src_ip_mask; //masks for configuration, 0 for flow key and 1 for pkg key
+    register<bit<32>>(2) dst_ip_mask;
+    register<bit<16>>(2) src_port_mask;
+    register<bit<16>>(2) dst_port_mask;
+    register<bit<8>>(2) prot_mask;
+    
+    register<bit<1>>(1) pkg_id_mask;
  
     action deep_hash(in bit<32> ipv4_src, in bit<32> ipv4_dst, in bit<16> srcport, in bit<16> dstport, in bit<8> protocol, in bit<16> ipsum, in bit<16> checksum, in bit<32> seq_no, in bit<16> hdlen, in bit<48> payload,out bit<16> dhash){
         hash(dhash, HashAlgorithm.crc32_custom, 16w0, {ipv4_src, ipv4_dst,srcport,dstport,protocol,ipsum,checksum,seq_no,hdlen,payload}, 16w65535);
@@ -287,7 +296,7 @@ control MyIngress(inout headers hdr,
 
         if (hdr.tcp.isValid()) {
             //bloom_hash(hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.src_port, hdr.tcp.dst_port,hdr.ipv4.protocol, hdr.tcp.checksum,hdr.tcp.seq_no,0,0, h1, h2, h3);
-            
+            //fixed version for counting packets per dstIP
             deep_hash(hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.src_port, hdr.tcp.dst_port,hdr.ipv4.protocol,hdr.ipv4.hdrChecksum, hdr.tcp.checksum,hdr.tcp.seq_no, 0, 0, deep_h);
             slot_hash(0, hdr.ipv4.dstAddr, 0, 0, 0, slot_h);
             bitmap_hash(hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.src_port, hdr.tcp.dst_port,hdr.ipv4.protocol,hdr.ipv4.hdrChecksum, hdr.tcp.checksum,hdr.tcp.seq_no, 0, 0, bitmap_h);
