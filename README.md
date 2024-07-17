@@ -1,4 +1,4 @@
 # Lemon2024
-Lemon sketch implementation in Bmv2 and Tofino.
+Temporary project for helping understanding lemon sketch
 
-For helping understand the design of Lemon Sketch
+Lemon sketch implementation in Bmv2 and Tofino. Also a python version for helping understand the design of Lemon Sketch
