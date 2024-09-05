@@ -1,4 +1,3 @@
-
 class Bitmap:
     def __init__(self, size = 256):
         self.sum = 0
