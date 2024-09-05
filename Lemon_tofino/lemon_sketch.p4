@@ -7,6 +7,7 @@
 #include "common/headers.p4"
 #include "common/util.p4"
 
+//for tofino1
 #define T1 16384
 #define T2 8192
 #define T3 1024
