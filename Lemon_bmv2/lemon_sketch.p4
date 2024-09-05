@@ -298,6 +298,7 @@ control MyIngress(inout headers hdr,
         if (hdr.tcp.isValid()) {
             //bloom_hash(hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.src_port, hdr.tcp.dst_port,hdr.ipv4.protocol, hdr.tcp.checksum,hdr.tcp.seq_no,0,0, h1, h2, h3);
             //fixed version for counting packets per dstIP
+	    //key_pkg and key_flow
             deep_hash(hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.src_port, hdr.tcp.dst_port,hdr.ipv4.protocol,hdr.ipv4.hdrChecksum, hdr.tcp.checksum,hdr.tcp.seq_no, 0, 0, deep_h);
             slot_hash(0, hdr.ipv4.dstAddr, 0, 0, 0, slot_h);
             bitmap_hash(hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.src_port, hdr.tcp.dst_port,hdr.ipv4.protocol,hdr.ipv4.hdrChecksum, hdr.tcp.checksum,hdr.tcp.seq_no, 0, 0, bitmap_h);
