@@ -235,13 +235,13 @@ control SwitchIngress(
         ig_md.lemon.tag = 2;
     }
     action return_tag3(){
-        ig_md.lemon.tag = 1;
+        ig_md.lemon.tag = 3;
     }
     action return_tag4(){
-        ig_md.lemon.tag = 1;
+        ig_md.lemon.tag = 4;
     }
     action return_tag5(){
-        ig_md.lemon.tag = 1;
+        ig_md.lemon.tag = 5;
     }
 
     table lemon_match {
